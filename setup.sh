@@ -14,8 +14,7 @@ chflags hidden $ROOT
 "$ROOT/symlink.sh"
 "$ROOT/config.sh"
 "$ROOT/install-development-tools.sh"
-"$ROOT/install-applications.sh"
-"$ROOT/xcode-themes.sh"
+"$ROOT/install-user-applications.sh"
 
 echo Done!
 echo Restarting shell...

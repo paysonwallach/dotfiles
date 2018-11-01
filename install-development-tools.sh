@@ -30,7 +30,6 @@ brew tap caskroom/fonts
 brew cask install font-fira-code
 
 # Install Bazel dependencies
-
 brew tap caskroom/versions
 brew cask install java8
 
@@ -40,17 +39,34 @@ brew install \
     cocoapods \
     fish \
     git \
+    node \
     python \
     wget
 
 # Change shell to Fish
-
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 
 chsh -s /usr/local/bin/fish
 
-# Install applications
-
 brew tap caskroom/cask
 brew cask install \
     virtualbox \
+
+# Install Xcode themes
+mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+
+git clone https://github.com/paysonwallach/Material-Light-Theme-Xcode.git /tmp/material-light-theme
+
+git clone https://github.com/sasikiran/Material-Theme-for-Xcode.git /tmp/material-dark-theme
+
+cd /private/tmp
+
+cp material-light-theme/Material\ Light.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+
+cp material-dark-theme/MaterialTheme.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Material.xccolortheme
+
+cp material-dark-theme/MaterialTheme\ Darker.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Material\ Dark.xccolortheme
+
+cd ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+
+chmod +x Material\ Light.xccolortheme Material.xccolortheme Material\ Dark.xccolortheme
