@@ -1,6 +1,9 @@
 #!/usr/bin/env bash -e
 
-mkdir -p $HOME/.config
+ROOT="$(pwd)"
 
-ln -s $(pwd)/fish "$HOME/.config"
-ln -s $(pwd)/fisher "$HOME/.config"
+mkdir -p "$HOME/.config"
+
+ln -s $ROOT/bin "$HOME/.bin"
+ln -s $ROOT/fish "$HOME/.config"
+ln -s $ROOT/fisher "$HOME/.config"
