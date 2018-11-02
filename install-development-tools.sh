@@ -41,6 +41,7 @@ brew install \
     git \
     node \
     python \
+    sourcekitten \
     wget
 
 # Change shell to Fish
