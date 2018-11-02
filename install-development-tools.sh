@@ -33,6 +33,8 @@ brew cask install font-fira-code
 brew tap caskroom/versions
 brew cask install java8
 
+brew install --with-toolchain llvm
+
 brew install \
     bazel \
     carthage \
@@ -62,12 +64,10 @@ git clone https://github.com/sasikiran/Material-Theme-for-Xcode.git /tmp/materia
 
 cd /private/tmp
 
-cp material-light-theme/Material\ Light.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+cp material-light-theme/Material\ (Light).xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes
 
-cp material-dark-theme/MaterialTheme.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Material.xccolortheme
-
-cp material-dark-theme/MaterialTheme\ Darker.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Material\ Dark.xccolortheme
+cp material-dark-theme/MaterialTheme.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Material\ (Dark).xccolortheme
 
 cd ~/Library/Developer/Xcode/UserData/FontAndColorThemes
 
-chmod +x Material\ Light.xccolortheme Material.xccolortheme Material\ Dark.xccolortheme
+chmod +x Material\ (Light).xccolortheme Material\ (Dark).xccolortheme
