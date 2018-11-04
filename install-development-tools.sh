@@ -53,7 +53,8 @@ chsh -s /usr/local/bin/fish
 
 brew tap caskroom/cask
 brew cask install \
-    virtualbox \
+    hyperterm \
+    virtualbox
 
 # Install Xcode themes
 mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes
