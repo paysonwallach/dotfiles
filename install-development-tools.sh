@@ -33,23 +33,31 @@ brew cask install font-fira-code
 brew tap caskroom/versions
 brew cask install java8
 
-brew install --with-toolchain llvm
-
 brew install \
     bazel \
     carthage \
     cocoapods \
     fish \
     git \
-    node \
     python \
-    sourcekitten \
     wget
 
-# Change shell to Fish
+# Install nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+# Install fisher
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+
+# Change shell to fish
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 
 chsh -s /usr/local/bin/fish
+
+# Install bass
+fisher add edc/bass
+
+# Install fish nvm
+fisher add FabioAntunes/fish-nvm
 
 brew tap caskroom/cask
 brew cask install \
