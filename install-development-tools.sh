@@ -25,44 +25,29 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brew update && brew cleanup
 
+brew install \
+    fish \
+    git \
+    ruby \
+    readline \
+    sqlite \
+    wget
+
 # Install Fira Code
 brew tap caskroom/fonts
 brew cask install font-fira-code
 
-# Install Bazel dependencies
-brew tap caskroom/versions
-brew cask install java8
-
-brew install \
-    bazel \
-    carthage \
-    cocoapods \
-    fish \
-    git \
-    python \
-    wget
+# Install VirualBox
+brew tap caskroom/cask
+brew cask install virtualbox
 
 # Install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
-# Install fisher
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-
 # Change shell to fish
-echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
 
 chsh -s /usr/local/bin/fish
-
-# Install bass
-fisher add edc/bass
-
-# Install fish nvm
-fisher add FabioAntunes/fish-nvm
-
-brew tap caskroom/cask
-brew cask install \
-    hyperterm \
-    virtualbox
 
 # Install Xcode themes
 mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes
