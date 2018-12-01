@@ -24,7 +24,7 @@ function fish_prompt
     end
 
     # Format current directory on prompt output
-    set prompt "$minima_color_yellow$current_directory$minima_color_normal "
+    set prompt "$minima_color_cyan$current_directory$minima_color_normal "
 
     set -l color_symbol $minima_color_green
 
