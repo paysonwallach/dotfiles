@@ -628,6 +628,8 @@
 	<integer>0</integer>
 	<key>EnableDivisionView</key>
 	<false/>
+	<key>HideActivityIndicator</key>
+	<false/>
 	<key>HideScrollbar</key>
 	<true/>
 	<key>HideTabCloseButton</key>
@@ -688,15 +690,19 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>929 33 445 77 0 0 1440 877 </string>
+	<string>1498 619 445 77 0 0 3440 1417 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 22 618 573 0 0 1440 877 </string>
+	<string>269 90 609 401 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>107 259 928 394 0 0 1440 877 </string>
+	<string>313 289 770 420 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>962 0 475 877 0 0 1440 877 </string>
+	<string>724 396 660 481 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>964 1 476 414 0 0 1440 877 </string>
+	<string>738 60 668 366 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>722 396 660 481 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>239 1 660 481 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1353,7 +1359,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Regular 12</string>
+			<string>FiraCode-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1507,7 +1513,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>1AB8FDA0-17BF-424A-AD7D-D949DCD033D3</string>
 	<key>NoSyncLastTipTime</key>
-	<real>565263954.67440903</real>
+	<real>567055157.77673697</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1524,7 +1530,7 @@
 		<array>
 			<string>session.jobName</string>
 			<string>session.id</string>
-			<string>session.columns</string>
+			<string>session.mouseReportingMode</string>
 			<string>session.profileName</string>
 			<string>session.name</string>
 			<string>session.terminalIconName</string>
@@ -1551,11 +1557,12 @@
 			<string>session.jobPid</string>
 			<string>session.pid</string>
 			<string>session.lastCommand</string>
+			<string>session.columns</string>
 			<string>session.presentationName</string>
-			<string>session.mouseReportingMode</string>
 		</array>
 		<key>16</key>
 		<array>
+			<string>currentTab.currentSession.session.mouseReportingMode</string>
 			<string>currentTab.currentSession.session.tty</string>
 			<string>currentTab.currentSession.session.username</string>
 			<string>currentTab.currentSession.session.name</string>
@@ -1589,6 +1596,7 @@
 			<string>currentSession.session.presentationName</string>
 			<string>currentSession.session.jobPid</string>
 			<string>currentSession.session.username</string>
+			<string>currentSession.session.mouseReportingMode</string>
 			<string>currentSession.session.terminalIconName</string>
 			<string>currentSession.session.profileName</string>
 			<string>currentSession.session.rows</string>
@@ -1613,6 +1621,8 @@
 	</dict>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>564319419.81940901</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
@@ -1626,7 +1636,29 @@
 		<string>0006</string>
 		<string>0007</string>
 		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
+		<string>0011</string>
+		<string>0012</string>
+		<string>0013</string>
+		<string>0014</string>
+		<string>0015</string>
+		<string>0016</string>
+		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
+		<string>0020</string>
+		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
 	</array>
+	<key>NoSyncTurnOffBracketedPasteOnHostChange</key>
+	<true/>
+	<key>NoSyncVeryOldNightlyBuildWarning_SilenceUntil</key>
+	<real>569819507.68829799</real>
+	<key>NoSyncVeryOldNightlyBuildWarning_selection</key>
+	<integer>1</integer>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>PasteTabToStringTabStopSize</key>
@@ -1679,9 +1711,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-11-30T09:45:54Z</date>
+	<date>2019-01-15T11:06:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>ShowNewOutputIndicator</key>
+	<true/>
+	<key>StatusBarPosition</key>
+	<integer>1</integer>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
 	<key>TerminalMargin</key>
@@ -1694,6 +1730,8 @@
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.3.20181119-nightly</string>
 </dict>
