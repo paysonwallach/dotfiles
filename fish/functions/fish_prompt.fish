@@ -3,7 +3,6 @@ function fish_prompt
     set -l exit_code $status
 
     set -l prompt ""
-    set -l user_and_host ""
     set -l current_directory (__parse_current_directory)
     set -l command_duration ""
 
@@ -20,11 +19,11 @@ function fish_prompt
         end
 
         # Format user and host part of prompt
-        set user_and_host "$minima_username_color$user$minima_color_gray@$minima_host_color$host$minima_color_gray:$minima_color_normal "
+        set prompt "$minima_username_color$user$minima_color_gray@$minima_host_color$host$minima_color_gray:$minima_color_normal "
     end
 
     # Format current directory on prompt output
-    set prompt "$minima_color_cyan$current_directory$minima_color_normal "
+    set prompt $prompt "$minima_color_cyan$current_directory$minima_color_normal "
 
     set -l color_symbol $minima_color_green
 
