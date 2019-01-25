@@ -1,9 +1,9 @@
 function __format_time -d "Format milliseconds to a human readable format"
     set -l milliseconds $argv[1]
-    set -l seconds (math "$milliseconds / 1000 % 60")
-    set -l minutes (math "$milliseconds / 60000 % 60")
-    set -l hours (math "$milliseconds / 3600000 % 24")
-    set -l days (math "$milliseconds / 86400000")
+    set -l seconds (math "floor($milliseconds / 1000) % 60")
+    set -l minutes (math "floor($milliseconds / 60000) % 60")
+    set -l hours (math "floor($milliseconds / 3600000) % 24")
+    set -l days (math "floor($milliseconds / 86400000)")
     set -l threshold $argv[2]
     set -l time
 
