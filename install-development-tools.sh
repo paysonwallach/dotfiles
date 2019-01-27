@@ -26,8 +26,13 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew update && brew cleanup
 
 brew install \
+	carthage \
+	cocoapods \
     fish \
-    git \
+    gotop \
+    imagemagick \
+    micro \
+    pyenv \
     ruby \
     readline \
     sqlite \
