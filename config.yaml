@@ -1,0 +1,60 @@
+config:
+  backup: true
+  banner: false
+  create: true
+  dotpath: dotfiles
+  ignoreempty: false
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+  showdiff: false
+  workdir: ~/.config/dotdrop
+dotfiles:
+  d_polybar:
+    dst: ~/.config/polybar
+    src: config/polybar
+  d_rofi:
+    dst: ~/.config/rofi
+    src: config/rofi
+  d_utilities:
+    dst: ~/.config/utilities
+    src: config/utilities
+  d_zeal:
+    dst: ~/.config/Zeal
+    src: config/Zeal
+  f_bspwmrc:
+    dst: ~/.config/bspwm/bspwmrc
+    src: config/bspwm/bspwmrc
+  f_compton.conf:
+    dst: ~/.config/compton/compton.conf
+    src: config/compton/compton.conf
+  f_dunstrc:
+    dst: ~/.config/dunst/dunstrc
+    src: config/dunst/dunstrc
+  f_sxhkdrc:
+    dst: ~/.config/sxhkd/sxhkdrc
+    src: config/sxhkd/sxhkdrc
+  f_xbindkeysrc:
+    dst: ~/.Xbindkeysrc
+    src: Xbindkeysrc
+  f_xmodmap:
+    dst: ~/.Xmodmap
+    src: Xmodmap
+  f_xresources:
+    dst: ~/.Xresources
+    src: Xresources
+profiles:
+  Paysons-MacBook-Pro:
+    dotfiles:
+    - f_xresources
+    - f_xbindkeysrc
+    - f_xmodmap
+    - f_bspwmrc
+    - f_compton.conf
+    - f_dunstrc
+    - d_polybar
+    - d_rofi
+    - f_sxhkdrc
+    - d_utilities
+    - d_zeal

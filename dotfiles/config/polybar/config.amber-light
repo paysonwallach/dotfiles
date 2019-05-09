@@ -1,0 +1,221 @@
+[color]
+red = #e53935
+pink = #d81b60
+purple = #8e24aa
+deep-purple = #5e35b1
+indigo = #3949ab
+blue = #1e88e5
+light-blue = #039be5
+cyan = #00acc1
+teal = #00897b
+green = #43a047
+light-green = #7cb342
+lime = #c0ca33
+yellow = #fdd835
+amber = #ffb300
+orange = #fb8c00
+deep-orange = #f4511e
+brown = #6d4c41
+grey = #757575
+blue-gray = #546e7a
+
+bg = #88F5F5F5
+fg = #212121
+
+acolor = ${color.amber}
+curgent = ${color.red}
+coccupied = ${color.blue}
+
+
+[bar/main]
+width = 100%
+height = 60
+bottom = false
+fixed-center = false
+line-size = 2
+padding-right = 0
+
+background = ${color.bg}
+foreground = ${color.fg}
+
+border-size = 0
+
+module-margin = 1
+
+font-0 = "IBM Plex Mono:style=Regular:size=24;4"
+font-1 = "Material Icons:style=Regular:size=26;6"
+font-2 = FontAwesome:style=Regular:size=24;4
+
+cursor-click = pointer
+
+;tray-position = right
+;tray-padding = 0
+;tray-maxsize = 16
+
+modules-left = workspaces
+modules-right = bluetooth network volume battery date rofi power
+
+
+[module/workspaces]
+type = internal/bspwm
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+format-padding = 0
+
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+;icon-4 = 5;
+icon-default =
+
+format = <label-state>
+
+label-focused = %icon%
+label-focused-foreground = ${color.acolor}
+label-focused-underline= ${color.acolor}
+label-focused-padding = 1
+
+label-occupied = %icon%
+label-occupied-padding = 1
+label-urgent-foreground = ${color.curgent}
+
+label-urgent = %icon%
+label-urgent-padding = 1
+
+label-empty = %icon%
+label-empty-foreground = ${color.fg}
+label-empty-padding = 1
+
+
+[module/date]
+type = internal/date
+interval = 60
+date = %a %d %b
+time = %H:%M
+label = %date% %time%
+;label = %time%
+
+
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 97
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = ADP1
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging> <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-full = <ramp-capacity> <label-full>
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = " %percentage%%"
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = " %percentage%%"
+
+; Available tokens:
+;   %percentage% (default)
+label-full = " %percentage%%"
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
+
+[module/volume]
+type = internal/alsa
+format-volume = <ramp-volume> <label-volume>
+format-muted = 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+
+[module/rofi]
+type = custom/script
+exec = echo 
+click-left = /home/paysonwallach/.config/utilities/rofi
+
+
+[module/power]
+type = custom/text
+content = 
+content-padding = 1
+content-background = ${color.acolor}
+content-foreground = ${color.fg}
+click-left = oblogout
+
+
+[module/network]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+format-connected = <label-connected>
+label-connected = 
+format-disconnected = <label-disconnected>
+label-disconnected = 
+
+
+[module/bluetooth]
+type = custom/script
+exec = echo 

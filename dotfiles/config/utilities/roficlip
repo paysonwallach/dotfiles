@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+roficlip \
+    -padding 18 \
+    -width 60 \
+	-theme material-amber-dark
+	

@@ -1,0 +1,35 @@
+* {
+    foreground:                 #616161;
+    background:                 rgba(0, 0, 0, 0);
+    background-color:           @background;
+    border-color:               @background;
+    separatorcolor:             @foreground;
+    scrollbar-handle:           @foreground;
+
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    alternate-normal-background: @normal-background;
+    alternate-normal-foreground: @normal-foreground;
+    selected-normal-background:  @normal-background;
+    selected-normal-foreground:  #FFB300;
+
+    active-background:           @foreground;
+    active-foreground:           @background;
+    alternate-active-background: @active-background;
+    alternate-active-foreground: @active-foreground;
+    selected-active-background:  @active-background;
+    selected-active-foreground:  #FFB300;
+
+    urgent-background:           #F44336;
+    urgent-foreground:           @background;
+    alternate-urgent-background: @urgent-background;
+    alternate-urgent-foreground: @urgent-foreground;
+    selected-urgent-background:  @background;
+    selected-urgent-foreground:  #F44336;
+}
+
+#window {
+    background-color:           rgba(255, 255, 255, 0.95);
+}
+
+@import "material-common.rasi"

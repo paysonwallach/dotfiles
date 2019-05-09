@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# Redshift
+redshift &
+
+# Background
+feh --bg-scale "$HOME/Pictures/Wallpaper/Seaside.jpg" &
+
+# Xresources
+xrdb -merge "$HOME/.Xresources" &
+
+# Shadows
+compton &
+
+# Remap modifier keys
+xmodmap "$HOME/.Xmodmap" &
+
+# Map function keys
+xbindkeys -f "$HOME/.Xbindkeysrc" &
+
+# Key repeat
+xset r rate 250 20 &
+
+# Polybar
+polybar -c "$XDG_CONFIG_HOME/polybar/config.amber-dark" main &
+
+# Clipboard
+clipster -d &
+
+# Screensaver
+xscreensaver -no-splash &
