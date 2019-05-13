@@ -20,18 +20,24 @@ dotfiles:
   d_utilities:
     dst: ~/.config/utilities
     src: config/utilities
-  d_zeal:
-    dst: ~/.config/Zeal
-    src: config/Zeal
   f_bspwmrc:
     dst: ~/.config/bspwm/bspwmrc
     src: config/bspwm/bspwmrc
   f_compton.conf:
     dst: ~/.config/compton/compton.conf
     src: config/compton/compton.conf
+  f_config.fish:
+    dst: ~/.config/fish/config.fish
+    src: config/fish/config.fish
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
+  f_hyper.js:
+    dst: ~/.config/hyper/.hyper.js
+    src: config/hyper/.hyper.js
+  f_profile:
+    dst: ~/.profile
+    src: profile
   f_sxhkdrc:
     dst: ~/.config/sxhkd/sxhkdrc
     src: config/sxhkd/sxhkdrc
@@ -44,17 +50,27 @@ dotfiles:
   f_xresources:
     dst: ~/.Xresources
     src: Xresources
+  f_xscreensaver:
+    dst: ~/.xscreensaver
+    src: xscreensaver
+  f_xsession:
+    dst: ~/.xsession
+    src: xsession
 profiles:
   Paysons-MacBook-Pro:
     dotfiles:
-    - f_xresources
-    - f_xbindkeysrc
-    - f_xmodmap
-    - f_bspwmrc
-    - f_compton.conf
-    - f_dunstrc
     - d_polybar
     - d_rofi
-    - f_sxhkdrc
     - d_utilities
-    - d_zeal
+    - f_bspwmrc
+    - f_compton.conf
+    - f_config.fish
+    - f_dunstrc
+    - f_hyper.js
+    - f_profile
+    - f_sxhkdrc
+    - f_xbindkeysrc
+    - f_xmodmap
+    - f_xresources
+    - f_xscreensaver
+    - f_xsession

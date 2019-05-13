@@ -33,7 +33,6 @@ height = 60
 bottom = false
 fixed-center = false
 line-size = 2
-padding-right = 0
 
 background = ${color.bg}
 foreground = ${color.fg}
@@ -42,7 +41,7 @@ border-size = 0
 
 module-margin = 1
 
-font-0 = "IBM Plex Mono:style=Regular:size=24;4"
+font-0 = "Overpass Mono:style=Regular:size=24;4"
 font-1 = "Material Icons:style=Regular:size=26;6"
 font-2 = FontAwesome:style=Regular:size=24;4
 
@@ -61,7 +60,7 @@ type = internal/bspwm
 pin-workspaces = true
 enable-click = true
 enable-scroll = true
-format-padding = 0
+;format-padding = 2
 
 ws-icon-0 = I;
 ws-icon-1 = II;
@@ -94,7 +93,7 @@ type = internal/date
 interval = 60
 date = %a %d %b
 time = %H:%M
-label = %date% %time%
+label = %date%  %time%
 ;label = %time%
 
 
@@ -194,7 +193,7 @@ ramp-volume-2 = 
 [module/rofi]
 type = custom/script
 exec = echo 
-click-left = /home/paysonwallach/.config/utilities/rofi
+click-left = $XDG_CONFIG_HOME/utilities/rofi
 
 
 [module/power]
@@ -213,9 +212,17 @@ interval = 3.0
 format-connected = <label-connected>
 label-connected = 
 format-disconnected = <label-disconnected>
-label-disconnected = 
+label-disconnected = 
+click-left = gnome-control-center wifi
 
 
 [module/bluetooth]
 type = custom/script
-exec = echo 
+exec = $XDG_CONFIG_HOME/polybar/scripts/bluetooth-status
+interval = 1.0
+click-left = gnome-control-center bluetooth
+
+
+[module/backup]
+type = custom/text
+content = 

@@ -5,7 +5,7 @@
 
 #window {
     border: 0;
-    padding: 8px;
+    padding: 16px;
 }
 
 #mainbox {
@@ -106,7 +106,7 @@
 #inputbar {
     spacing: 0;
     text-color: @normal-foreground;
-    padding: 4px;
+    padding: 16px;
 }
 
 #case-indicator {

@@ -4,7 +4,7 @@
 
 # program launcher
 ctrl + @space
-    $HOME/.config/utilities/rofi
+    $XDG_CONFIG_HOME/utilities/rofi
 
 # make sxhkd reload its configuration files:
 ctrl + Escape
@@ -120,5 +120,14 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
+#
+# Utilities
+#
+
+# clipboard manager
 ctrl + alt + v
     $HOME/.config/utilities/roficlip
+
+# scrot
+ctrl + shift + 3
+	scrot

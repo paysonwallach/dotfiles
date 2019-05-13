@@ -3,7 +3,7 @@ corner_radius = 0
 monitor = 0
 transparency = 0
 follow = mouse
-geometry = "800x5-24+84"
+geometry = "800x5-24+88"
 indicate_hidden = yes
 shrink = no
 separator_height = 0
@@ -12,7 +12,7 @@ horizontal_padding = 48
 frame_width = 0
 sort = no
 idle_threshold = 120
-font = IBM Plex 9
+font = IBM Plex 10
 line_height = 4
 markup = full
 alignment = left
@@ -29,23 +29,27 @@ browser = /usr/bin/chromium
 always_run_script = true
 title = Dunst
 class = Dunst
+
 [shortcuts]
 close = ctrl+space
 close_all = ctrl+shift+space
 history = ctrl+grave
 context = ctrl+shift+period
+
 [urgency_low]
 timeout = 4
-background = "#282c34"
-foreground = "#d8dee9"
+background = "#212121"
+foreground = "#F5F5F5"
 frame_color = "#c3e88d"
+
 [urgency_normal]
 timeout = 8
-background = "#282c34"
-foreground = "#d8dee9"
+background = "#212121"
+foreground = "#F5F5F5"
 frame_color = "#82aaff"
+
 [urgency_critical]
 timeout = 0
-background = "#282c34"
-foreground = "#d8dee9"
+background = "#212121"
+foreground = "#F5F5F5"
 frame_color = "#ffcb6b"
