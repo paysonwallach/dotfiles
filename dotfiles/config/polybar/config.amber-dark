@@ -202,7 +202,7 @@ content = 
 content-padding = 1
 content-background = ${color.acolor}
 content-foreground = ${color.fg}
-click-left = oblogout
+click-left = logout-dialog-gtk &
 
 
 [module/network]
@@ -213,14 +213,14 @@ format-connected = <label-connected>
 label-connected = 
 format-disconnected = <label-disconnected>
 label-disconnected = 
-click-left = gnome-control-center wifi
+click-left = gnome-control-center wifi &
 
 
 [module/bluetooth]
 type = custom/script
 exec = $XDG_CONFIG_HOME/polybar/scripts/bluetooth-status
 interval = 1.0
-click-left = gnome-control-center bluetooth
+click-left = gnome-control-center bluetooth &
 
 
 [module/backup]
