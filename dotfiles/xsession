@@ -1,1 +1,3 @@
 /usr/bin/light-locker &
+
+/usr/local/sbin/xscreensaver-lock &
