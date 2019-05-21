@@ -13,8 +13,8 @@
 "light -U 10"
 	XF86MonBrightnessDown
 
-"kbdbacklight + 25"
+"light -s sysfs/leds/smc::kbd_backlight -A 10"
 	XF86KbdBrightnessUp
 
-"kbdbacklight - 25"
+"light -s sysfs/leds/smc::kbd_backlight -U 10"
 	XF86KbdBrightnessDown
