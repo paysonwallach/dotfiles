@@ -4,25 +4,19 @@
 redshift &
 
 # Background
-feh --bg-scale "$HOME/Pictures/Wallpaper/Seaside.jpg" &
-
-# Xresources
-xrdb -merge "$HOME/.Xresources" &
+feh --bg-scale /usr/share/backgrounds/current &
 
 # Shadows
-compton &
+compton --config $XDG_CONFIG_HOME/compton/compton.conf &
 
 # Remap modifier keys
-xmodmap "$HOME/.Xmodmap" &
-
-# Map function keys
-xbindkeys -f "$HOME/.Xbindkeysrc" &
+xmodmap $HOME/.Xmodmap &
 
 # Key repeat
 xset r rate 250 20 &
 
 # Polybar
-polybar -c "$XDG_CONFIG_HOME/polybar/config.amber-dark" main &
+polybar -c $XDG_CONFIG_HOME/polybar/config bar &
 
 # Clipboard
 clipster -d &
