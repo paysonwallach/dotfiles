@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source $HOME/.profile
+
 # Redshift
 redshift &
 
@@ -9,6 +11,9 @@ feh --bg-scale /usr/share/backgrounds/current &
 # Shadows
 compton --config $XDG_CONFIG_HOME/compton/compton.conf &
 
+# Set keybindings
+xbindkeys -f $HOME/.Xbindkeysrc &
+
 # Remap modifier keys
 xmodmap $HOME/.Xmodmap &
 
@@ -16,7 +21,7 @@ xmodmap $HOME/.Xmodmap &
 xset r rate 250 20 &
 
 # Polybar
-polybar -c $XDG_CONFIG_HOME/polybar/config bar &
+polybar -c $XDG_CONFIG_HOME/polybar/config.amber-dark bar &
 
 # Clipboard
 clipster -d &
