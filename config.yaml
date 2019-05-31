@@ -35,12 +35,18 @@ dotfiles:
   f_hyper.js:
     dst: ~/.config/hyper/.hyper.js
     src: config/hyper/.hyper.js
+  f_init.vim:
+    dst: ~/.config/nvim/init.vim
+    src: config/nvim/init.vim
   f_profile:
     dst: ~/.profile
     src: profile
   f_sxhkdrc:
     dst: ~/.config/sxhkd/sxhkdrc
     src: config/sxhkd/sxhkdrc
+  f_tmux.conf:
+    dst: ~/.tmux.conf
+    src: tmux.conf
   f_xbindkeysrc:
     dst: ~/.Xbindkeysrc
     src: Xbindkeysrc
@@ -74,3 +80,5 @@ profiles:
     - f_xresources
     - f_xscreensaver
     - f_xsession
+    - f_tmux.conf
+    - f_init.vim
