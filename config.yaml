@@ -1,0 +1,39 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: .
+  ignoreempty: false
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+  showdiff: false
+  workdir: ~/.config/dotdrop
+bin:
+  dst: ~/.local/share/bin
+  link: link
+  src: bin
+fish:
+  dst: ~/.config/fish
+  link: link
+  src: fish
+fisher:
+  dst: ~/.config/fisher
+  link: link
+  src: fisher
+iterm:
+  dst: ~/.config/iTerm
+  link: link
+  src: iTerm
+nvim:
+  dst: ~/.config/nvim
+  link: link
+  src: nvim
+profiles:
+  Paysons-MacBook-Pro:
+    bin
+    fish
+    fisher
+    iterm
+    nvim
