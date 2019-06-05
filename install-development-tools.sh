@@ -1,18 +1,16 @@
 #!/usr/bin/env bash -e
 
-echo Configuring development tools...
+echo "Configuring development tools..."
 
 # Check for Xcode Command Line Tools
-
 if [[ $(xcode-select --version) ]]; then
-  echo Xcode command tools already installed
+  echo "Xcode command tools already installed"
 else
   echo "Installing Xcode commandline tools..."
   $(xcode-select --install)
 fi
 
 # Check for Homebrew
-
 if [[ $(brew --version) ]] ; then
     echo "Attempting to update Homebrew..."
     brew update
@@ -26,28 +24,33 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew update && brew cleanup
 
 brew install \
-	carthage \
-	cocoapods \
+    bat \
+    carthage \
+    cmake \
+    cocoapods \
     fish \
+    git-lfs \
     gotop \
     imagemagick \
-    micro \
+    mas \
+    neovim \
+    nvm \
+    pwgen \
     pyenv \
     ruby \
-    readline \
-    sqlite \
+    tmux \
     wget
 
-# Install Fira Code
-brew tap caskroom/fonts
-brew cask install font-fira-code
-
-# Install VirualBox
 brew tap caskroom/cask
-brew cask install virtualbox
+brew tap caskroom/fonts
 
-# Install nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+brew cask install \
+    aerial \
+    atom \
+    docker \
+    font-fira-code \
+    font-hasklig \
+    virtualbox
 
 # Change shell to fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
