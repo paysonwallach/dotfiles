@@ -21,7 +21,7 @@ xmodmap $HOME/.Xmodmap &
 xset r rate 250 20 &
 
 # Polybar
-polybar -c $XDG_CONFIG_HOME/polybar/config.amber-dark bar &
+killall polybar; polybar -c $XDG_CONFIG_HOME/polybar/config.amber-dark main &
 
 # Clipboard
 clipster -d &
