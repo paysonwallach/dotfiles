@@ -14,6 +14,9 @@ dotfiles:
   d_completions:
     src: config/fish/completions
     dst: ~/.config/fish/completions
+  d_conf.d:
+    src: config/fish/conf.d
+    dst: ~/.config/fish/conf.d
   d_functions:
     src: config/fish/functions
     dst: ~/.config/fish/functions
@@ -81,6 +84,7 @@ profiles:
   fish:
     dotfiles:
     - d_completions
+    - d_conf.d
     - d_functions
     - f_config.fish
   x:
