@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=xset
+Comment=Set key-repeat rate
+Exec=/usr/bin/xset r rate 250 20
+NoDisplay=false
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true

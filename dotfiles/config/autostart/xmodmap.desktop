@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Xmodmap
+Comment=Swap ctrl and cmd keys
+Exec=/usr/bin/xmodmap /home/paysonwallach/.Xmodmap
+NoDisplay=false
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
