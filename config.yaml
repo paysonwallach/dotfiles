@@ -62,9 +62,21 @@ dotfiles:
   f_xsession:
     dst: ~/.xsession
     src: xsession
+  d_autostart:
+    src: config/autostart
+    dst: ~/.config/autostart
+  d_gtk-2.0:
+    src: config/gtk-2.0
+    dst: ~/.config/gtk-2.0
+  d_gtk-3.0:
+    src: config/gtk-3.0
+    dst: ~/.config/gtk-3.0
 profiles:
-  Paysons-MacBook-Pro:
+  arch_bspwm:
     dotfiles:
+    - d_autostart
+    - d_gtk-2.0
+    - d_gtk-3.0
     - d_polybar
     - d_rofi
     - d_utilities
@@ -72,13 +84,22 @@ profiles:
     - f_compton.conf
     - f_config.fish
     - f_dunstrc
-    - f_hyper.js
+    - f_init.vim
     - f_profile
     - f_sxhkdrc
+    - f_tmux.conf
     - f_xbindkeysrc
     - f_xmodmap
     - f_xresources
     - f_xscreensaver
     - f_xsession
-    - f_tmux.conf
+  arch_gnome:
+    - d_autostart
+    - d_gtk-2.0
+    - d_gtk-3.0
+    - f_config.fish
     - f_init.vim
+    - f_tmux.conf
+    - f_xmodmap
+    - f_xresources
+    - f_xscreensaver
