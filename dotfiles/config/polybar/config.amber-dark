@@ -193,7 +193,7 @@ ramp-volume-2 = 
 [module/rofi]
 type = custom/script
 exec = echo 
-click-left = $XDG_CONFIG_HOME/utilities/rofi
+click-left = $XDG_CONFIG_HOME/utilities/rofi &
 
 
 [module/power]

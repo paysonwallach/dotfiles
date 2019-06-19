@@ -9,7 +9,7 @@ bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Electron state=floating rectangle=2160x1350+0+0
+bspc rule -a Electron state=floating
 bspc rule -a Gnome-control-center state=floating
 
 source $XDG_CONFIG_HOME/utilities/colors

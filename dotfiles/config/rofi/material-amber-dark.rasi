@@ -1,6 +1,6 @@
 * {
     foreground:                 #E0E0E0;
-    background:                 rgba(0, 0, 0, 0);
+    background:                 rgba(33, 33, 33, 0);
     background-color:           @background;
     border-color:               @background;
     separatorcolor:             @foreground;
@@ -29,7 +29,7 @@
 }
 
 #window {
-    background-color:           rgba(0, 0, 0, 0.8);
+    background-color:           rgba(33, 33, 33, 0.8);
 }
 
 @import "material-common.rasi"
