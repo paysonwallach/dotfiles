@@ -11,6 +11,15 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
+  d_completions:
+    src: config/fish/completions
+    dst: ~/.config/fish/completions
+  d_functions:
+    src: config/fish/functions
+    dst: ~/.config/fish/functions
+  f_config.fish:
+    dst: ~/.config/fish/config.fish
+    src: config/fish/config.fish
   d_polybar:
     dst: ~/.config/polybar
     src: config/polybar
@@ -26,9 +35,6 @@ dotfiles:
   f_compton.conf:
     dst: ~/.config/compton/compton.conf
     src: config/compton/compton.conf
-  f_config.fish:
-    dst: ~/.config/fish/config.fish
-    src: config/fish/config.fish
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
@@ -72,7 +78,20 @@ dotfiles:
     src: config/gtk-3.0
     dst: ~/.config/gtk-3.0
 profiles:
+  fish:
+    dotfiles:
+    - d_completions
+    - d_functions
+    - f_config.fish
+  x:
+    dotfiles:
+    - f_xmodmap
+    - f_xresources
+    - f_xscreensaver
   arch_bspwm:
+    include:
+    - fish
+    - x
     dotfiles:
     - d_autostart
     - d_gtk-2.0
@@ -82,24 +101,20 @@ profiles:
     - d_utilities
     - f_bspwmrc
     - f_compton.conf
-    - f_config.fish
     - f_dunstrc
     - f_init.vim
     - f_profile
     - f_sxhkdrc
     - f_tmux.conf
     - f_xbindkeysrc
-    - f_xmodmap
-    - f_xresources
-    - f_xscreensaver
     - f_xsession
   arch_gnome:
+    include:
+    - fish
+    - x
+    dotfiles:
     - d_autostart
     - d_gtk-2.0
     - d_gtk-3.0
-    - f_config.fish
     - f_init.vim
     - f_tmux.conf
-    - f_xmodmap
-    - f_xresources
-    - f_xscreensaver
