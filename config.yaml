@@ -41,9 +41,6 @@ dotfiles:
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
-  f_hyper.js:
-    dst: ~/.config/hyper/.hyper.js
-    src: config/hyper/.hyper.js
   f_init.vim:
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
@@ -95,21 +92,17 @@ profiles:
   arch_bspwm:
     include:
     - fish
+    - gnome
     - x
     dotfiles:
-    - d_autostart
-    - d_gtk-2.0
-    - d_gtk-3.0
     - d_polybar
     - d_rofi
     - d_utilities
     - f_bspwmrc
     - f_compton.conf
     - f_dunstrc
-    - f_init.vim
     - f_profile
     - f_sxhkdrc
-    - f_tmux.conf
     - f_xbindkeysrc
     - f_xsession
   arch_gnome:
