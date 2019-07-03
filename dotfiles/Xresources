@@ -1,24 +1,42 @@
 ! Colors
-#define foreground       #CFD8DC
-#define background       #212121
-#define cursor           #CFD8DC
-#define white            #F5F5F5
-#define light_grey       #E0E0E0
-#define light_red        #EF9A9A
-#define red              #E57373
-#define light_yellow     #FFD54F
-#define yellow           #FFC107
-#define light_green      #C5E1A5
-#define green            #AED581
-#define light_cyan       #80DEEA
-#define cyan             #4DD0E1
-#define light_blue       #90CAF9
-#define blue             #64B5F6
-#define light_magenta    #CE93D8
-#define magenta          #BA68C8
-#define dark_grey        #616161
-#define black            #212121
+!#define foreground       #F5F5F5
+!#define background       #2F343F
+!#define dark_grey        #4B5262
+!#define black            #434A5A
+!#define light_red        #EF9A9A
+!#define red              #E57373
+!#define light_yellow     #FFD54F
+!#define yellow           #FFC107
+!#define light_green      #C5E1A5
+!#define green            #AED581
+!#define light_cyan       #80DEEA
+!#define cyan             #4DD0E1
+!#define light_blue       #90CAF9
+!#define blue             #64B5F6
+!#define light_magenta    #CE93D8
+!#define magenta          #BA68C8
+!#define white            #E5E9F0
+!#define light_grey       #D1D5DC
 
+! Material base-16
+#define foreground       #D8DEE8
+#define background       #000000
+#define dark_grey        #4B5262
+#define black            #434A5A
+#define light_red        #BF616A
+#define red              #B3555E
+#define light_green      #A3BE8C
+#define green            #93AE7C
+#define light_yellow     #EBCB8B
+#define yellow           #DBBB7B
+#define light_blue       #81A1C1
+#define blue             #7191B1
+#define light_magenta    #B48EAD
+#define magenta          #A6809F
+#define light_cyan       #89D0BA
+#define cyan             #7DBBA8
+#define white            #E5E9F0
+#define light_grey       #D1D5DC
 
 ! X11
 Xft.dpi:                 192
@@ -27,12 +45,10 @@ Xft.hinting:             true
 Xft.hintstyle:           hintfull
 Xft.lcdfilter:           lcddefault
 Xft.rgba:                rgb
-Xcursor.size:            48
 
-! URxvt
-*.foreground:            foreground
+! Terminal
 *.background:            background
-*.cursorColor:           cursor
+*.foreground:            foreground
 
 ! black
 *.color0:                black
@@ -66,17 +82,5 @@ Xcursor.size:            48
 *.color7:                light_grey
 *.color15:               white
 
-URxvt.tabbed.tabbar-fg:  15
-URxvt.tabbed.tabbar-bg:  -1
-URxvt.tabbed.tab-fg:     15
-URxvt.tabbed.tab-bg:     -1
+*.font:                  Fira Code:style=Regular:size=10
 
-URxvt.iso14755:          false
-URxvt.iso14755_52:       false
-URxvt.scrollBar:         false
-URxvt*depth:             32
-URxvt*cursorBlink:       true
-URxvt*internalBorder:    20
-URxvt*font:              xft:Hasklig:style=Regular:size=10,xft:Unifont,size=10
-URxvt.perl-ext-common:   default,matcher,resize-font,tabbed
-URxvt.tabbed.new-button: false
