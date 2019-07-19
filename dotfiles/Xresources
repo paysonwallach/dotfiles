@@ -82,5 +82,4 @@ Xft.rgba:                rgb
 *.color7:                light_grey
 *.color15:               white
 
-*.font:                  Fira Code:style=Regular:size=10
-
+*.font:                  Hasklig:style=Regular:size=10
