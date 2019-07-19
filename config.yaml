@@ -11,18 +11,15 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
-  d_completions:
-    src: config/fish/completions
-    dst: ~/.config/fish/completions
-  d_conf.d:
-    src: config/fish/conf.d
-    dst: ~/.config/fish/conf.d
-  d_functions:
-    src: config/fish/functions
-    dst: ~/.config/fish/functions
-  f_config.fish:
-    dst: ~/.config/fish/config.fish
-    src: config/fish/config.fish
+  d_autostart:
+    src: config/autostart
+    dst: ~/.config/autostart
+  d_gtk-2.0:
+    src: config/gtk-2.0
+    dst: ~/.config/gtk-2.0
+  d_gtk-3.0:
+    src: config/gtk-3.0
+    dst: ~/.config/gtk-3.0
   d_polybar:
     dst: ~/.config/polybar
     src: config/polybar
@@ -68,22 +65,43 @@ dotfiles:
   f_xsession:
     dst: ~/.xsession
     src: xsession
-  d_autostart:
-    src: config/autostart
-    dst: ~/.config/autostart
-  d_gtk-2.0:
-    src: config/gtk-2.0
-    dst: ~/.config/gtk-2.0
-  d_gtk-3.0:
-    src: config/gtk-3.0
-    dst: ~/.config/gtk-3.0
+  f_config.fish:
+    dst: ~/.config/fish/config.fish
+    src: config/fish/config.fish
+  f_fish_greeting.fish:
+    src: config/fish/functions/fish_greeting.fish
+    dst: ~/.config/fish/functions/fish_greeting.fish
+  f_fish_prompt.fish:
+    src: config/fish/functions/fish_prompt.fish
+    dst: ~/.config/fish/functions/fish_prompt.fish
+  f_fish_title.fish:
+    src: config/fish/functions/fish_title.fish
+    dst: ~/.config/fish/functions/fish_title.fish
+  f_newdir.fish:
+    src: config/fish/functions/newdir.fish
+    dst: ~/.config/fish/functions/newdir.fish
+  f_fishfile:
+    src: config/fish/fishfile
+    dst: ~/.config/fish/fishfile
 profiles:
   fish:
     dotfiles:
-    - d_completions
-    - d_conf.d
-    - d_functions
     - f_config.fish
+    - f_fish_greeting.fish
+    - f_fish_prompt.fish
+    - f_fish_title.fish
+    - f_newdir.fish
+    - f_fishfile
+  gnome:
+    include:
+    - fish
+    - x
+    dotfiles:
+    - d_autostart
+    - d_gtk-2.0
+    - d_gtk-3.0
+    - f_init.vim
+    - f_tmux.conf
   x:
     dotfiles:
     - f_xmodmap
@@ -105,13 +123,6 @@ profiles:
     - f_sxhkdrc
     - f_xbindkeysrc
     - f_xsession
-  arch_gnome:
+  Paysons-MacBook-Pro:
     include:
     - fish
-    - x
-    dotfiles:
-    - d_autostart
-    - d_gtk-2.0
-    - d_gtk-3.0
-    - f_init.vim
-    - f_tmux.conf
