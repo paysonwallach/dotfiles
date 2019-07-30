@@ -48,8 +48,8 @@ brew cask install \
     aerial \
     atom \
     docker \
-    font-fira-code \
-    font-hasklig \
+    caskroom/fonts/font-fira-code \
+    caskroom/fonts/font-hasklig \
     virtualbox
 
 # Change shell to fish
