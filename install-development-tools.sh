@@ -64,12 +64,12 @@ git clone https://github.com/paysonwallach/Material-Light-Theme-Xcode.git /tmp/m
 
 git clone https://github.com/sasikiran/Material-Theme-for-Xcode.git /tmp/material-dark-theme
 
-cd /private/tmp
+cd /tmp
 
-cp material-light-theme/Material\ (Light).xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+cp material-light-theme/Material\ Light.xccolortheme  ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Material\ \(Light\).xccolortheme
 
-cp material-dark-theme/MaterialTheme.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Material\ (Dark).xccolortheme
+cp material-dark-theme/MaterialTheme.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Material\ \(Dark\).xccolortheme
 
 cd ~/Library/Developer/Xcode/UserData/FontAndColorThemes
 
-chmod +x Material\ (Light).xccolortheme Material\ (Dark).xccolortheme
+chmod +x Material\ \(Light\).xccolortheme Material\ \(Dark\).xccolortheme
