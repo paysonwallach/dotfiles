@@ -20,6 +20,9 @@ dotfiles:
   f_init.vim:
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
+  f_tmux.conf:
+    dst: ~/.tmux.conf
+    src: tmux.conf
   f_config.fish:
     dst: ~/.config/fish/config.fish
     src: config/fish/config.fish
@@ -38,9 +41,6 @@ dotfiles:
   f_fishfile:
     src: config/fish/fishfile
     dst: ~/.config/fish/fishfile
-  f_tmux.conf:
-    dst: ~/.tmux.conf
-    src: tmux.conf
   f_hidehidden.fish:
     src: config/fish/functions/hideHidden.fish
     dst: ~/.config/fish/functions/hideHidden.fish
@@ -50,18 +50,22 @@ dotfiles:
 profiles:
   fish:
     dotfiles:
-    - f_fishfile
-    - f_config.fish
-    - f_fish_greeting.fish
-    - f_fish_prompt.fish
-    - f_fish_title.fish
-    - f_newdir.fish
-    - f_hidehidden.fish
-    - f_showhidden.fish
-  Paysons-MacBook-Pro:
+      - f_fishfile
+      - f_config.fish
+      - f_fish_greeting.fish
+      - f_fish_prompt.fish
+      - f_fish_title.fish
+      - f_newdir.fish
+      - f_hidehidden.fish
+      - f_showhidden.fish
+  Paysons-Mac-Pro:
     include:
       - fish
     dotfiles:
       - d_bin
       - d_iterm
       - f_init.vim
+      - f_tmux.conf
+  Paysons-MacBook-Pro:
+    include:
+      - Paysons-Mac-Pro
