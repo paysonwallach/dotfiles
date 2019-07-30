@@ -9,7 +9,7 @@ end
 # --- Aliases ---
 
 # Dotdrop
-alias dotdrop '/Users/paysonwallach/.dotfiles/dotdrop.sh'
+alias dotdrop $HOME/.dotfiles/dotdrop.sh
 
 
 # --- iTerm2 Shell Integration ---

@@ -1,8 +1,8 @@
 config:
   backup: true
-  banner: true
+  banner: false
   create: true
-  dotpath: .
+  dotpath: dotfiles
   ignoreempty: false
   keepdot: false
   link_dotfile_default: nolink
@@ -10,30 +10,58 @@ config:
   longkey: false
   showdiff: false
   workdir: ~/.config/dotdrop
-bin:
-  dst: ~/.local/share/bin
-  link: link
-  src: bin
-fish:
-  dst: ~/.config/fish
-  link: link
-  src: fish
-fisher:
-  dst: ~/.config/fisher
-  link: link
-  src: fisher
-iterm:
-  dst: ~/.config/iTerm
-  link: link
-  src: iTerm
-nvim:
-  dst: ~/.config/nvim
-  link: link
-  src: nvim
+dotfiles:
+  d_bin:
+    dst: ~/.local/bin
+    src: bin
+  d_iterm:
+    dst: ~/.config/iTerm
+    src: iTerm
+  f_init.vim:
+    dst: ~/.config/nvim/init.vim
+    src: config/nvim/init.vim
+  f_config.fish:
+    dst: ~/.config/fish/config.fish
+    src: config/fish/config.fish
+  f_fish_greeting.fish:
+    src: config/fish/functions/fish_greeting.fish
+    dst: ~/.config/fish/functions/fish_greeting.fish
+  f_fish_prompt.fish:
+    src: config/fish/functions/fish_prompt.fish
+    dst: ~/.config/fish/functions/fish_prompt.fish
+  f_fish_title.fish:
+    src: config/fish/functions/fish_title.fish
+    dst: ~/.config/fish/functions/fish_title.fish
+  f_newdir.fish:
+    src: config/fish/functions/newdir.fish
+    dst: ~/.config/fish/functions/newdir.fish
+  f_fishfile:
+    src: config/fish/fishfile
+    dst: ~/.config/fish/fishfile
+  f_tmux.conf:
+    dst: ~/.tmux.conf
+    src: tmux.conf
+  f_hidehidden.fish:
+    src: config/fish/functions/hideHidden.fish
+    dst: ~/.config/fish/functions/hideHidden.fish
+  f_showhidden.fish:
+    src: config/fish/functions/showHidden.fish
+    dst: ~/.config/fish/functions/showHidden.fish
 profiles:
+  fish:
+    dotfiles:
+    - f_fishfile
+    - f_config.fish
+    - f_fish_greeting.fish
+    - f_fish_prompt.fish
+    - f_fish_title.fish
+    - f_newdir.fish
+    - f_hidehidden.fish
+    - f_showhidden.fish
   Paysons-MacBook-Pro:
-    bin
-    fish
-    fisher
-    iterm
-    nvim
+    include:
+      - fish
+    dotfiles:
+      - d_bin
+      - d_iterm
+      - f_init.vim
