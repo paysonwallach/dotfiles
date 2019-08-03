@@ -23,7 +23,42 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brew bundle install --file="$HOME/.config/brew/Brewfile"
 
-# change shell to fish
+brew install \
+    bat \
+    carthage \
+    cmake \
+    cocoapods \
+    fish \
+    git-lfs \
+    gotop \
+    imagemagick \
+    mas \
+    meson \
+    mosh \
+    neovim \
+    ninja \
+    nvm \
+    pwgen \
+    pyenv \
+    ruby \
+    swiftenv \
+    terminal-notifier \
+    tmux \
+    trash \
+    wget
+
+brew tap caskroom/cask
+brew tap caskroom/fonts
+
+brew cask install \
+    aerial \
+    atom \
+    docker \
+    caskroom/fonts/font-hasklig \
+    virtualbox \
+    virtualbox-extension-pack
+
+# Change shell to fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 
 chsh -s /usr/local/bin/fish
