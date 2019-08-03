@@ -33,12 +33,18 @@ brew install \
     gotop \
     imagemagick \
     mas \
+    meson \
+    mosh \
     neovim \
+    ninja \
     nvm \
     pwgen \
     pyenv \
     ruby \
+    swiftenv \
+    terminal-notifier \
     tmux \
+    trash \
     wget
 
 brew tap caskroom/cask
@@ -48,9 +54,9 @@ brew cask install \
     aerial \
     atom \
     docker \
-    caskroom/fonts/font-fira-code \
     caskroom/fonts/font-hasklig \
-    virtualbox
+    virtualbox \
+    virtualbox-extension-pack
 
 # Change shell to fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
