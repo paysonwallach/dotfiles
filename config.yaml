@@ -11,18 +11,12 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
+  d_bin:
+    src: bin
+    dst: ~/.local/bin
   d_iterm:
     src: iTerm
     dst: ~/.config/iTerm
-  f_brew-prune-packages:
-    src: bin/brew-prune-packages
-    dst: ~/.local/bin/brew-prune-packages
-  f_mrg:
-    src: bin/mrg
-    dst: ~/.local/bin/mrg
-  f_purge-time-machine-snapshots:
-    src: bin/purge-time-machine-snapshots
-    dst: ~/.local/bin/purge-time-machine-snapshots
   f_init.vim:
     src: init.vim
     dst: ~/.config/nvim/init.vim
@@ -53,31 +47,25 @@ dotfiles:
   f_showhidden.fish:
     src: fish/functions/showHidden.fish
     dst: ~/.config/fish/functions/showHidden.fish
-  f_brewfile:
-    src: brew/Brewfile
-    dst: ~/.config/brew/Brewfile
 profiles:
   fish:
     dotfiles:
-    - f_fishfile
-    - f_config.fish
-    - f_fish_greeting.fish
-    - f_fish_prompt.fish
-    - f_fish_title.fish
-    - f_newdir.fish
-    - f_hidehidden.fish
-    - f_showhidden.fish
+      - f_fishfile
+      - f_config.fish
+      - f_fish_greeting.fish
+      - f_fish_prompt.fish
+      - f_fish_title.fish
+      - f_newdir.fish
+      - f_hidehidden.fish
+      - f_showhidden.fish
   Paysons-Mac-Pro:
     include:
-    - fish
+      - fish
     dotfiles:
-    - d_iterm
-    - f_brew-prune-packages
-    - f_mrg
-    - f_purge-time-machine-snapshots
-    - f_init.vim
-    - f_tmux.conf
-    - f_brewfile
+      - d_bin
+      - d_iterm
+      - f_init.vim
+      - f_tmux.conf
   Paysons-MacBook-Pro:
     include:
-    - Paysons-Mac-Pro
+      - Paysons-Mac-Pro
