@@ -14,15 +14,6 @@ dotfiles:
   d_iterm:
     src: iTerm
     dst: ~/.config/iTerm
-  f_brew-prune-packages:
-    src: bin/brew-prune-packages
-    dst: ~/.local/bin/brew-prune-packages
-  f_mrg:
-    src: bin/mrg
-    dst: ~/.local/bin/mrg
-  f_purge-time-machine-snapshots:
-    src: bin/purge-time-machine-snapshots
-    dst: ~/.local/bin/purge-time-machine-snapshots
   f_init.vim:
     src: init.vim
     dst: ~/.config/nvim/init.vim
@@ -32,9 +23,6 @@ dotfiles:
   f_config.fish:
     src: fish/config.fish
     dst: ~/.config/fish/config.fish
-  f_fish_title.fish:
-    src: fish/functions/fish_title.fish
-    dst: ~/.config/fish/functions/fish_title.fish
   f_fuck.fish:
     src: fish/functions/fuck.fish
     dst: ~/.config/fish/functions/fuck.fish
