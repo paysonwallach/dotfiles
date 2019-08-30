@@ -1,5 +1,6 @@
 # Launch tmux upon opening of new terminal
 if status is-interactive
+and not test -n "$SSH_TTY"
 and not set -q TMUX
     command tmux new-session \; new-window "tmux set-option -ga terminal-overrides \",$TERM:Tc\"; tmux detach"
     command tmux attach
