@@ -9,26 +9,23 @@ Plug 'airblade/vim-gitgutter'
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'severin-lemaignan/vim-minimap'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 
 " Syntax highlighters
-Plug 'arakashic/chromatica.nvim'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'vim-python/python-syntax'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " Semantic highlighter
-Plug 'jaxbot/semantic-highlight.vim'
+"Plug 'jaxbot/semantic-highlight.vim'
 
 " Color schemes
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'morhetz/gruvbox'
+Plug 'jeffkreeftmeijer/vim-dim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'vim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()
@@ -79,35 +76,37 @@ set guicursor+=i:blinkwait10
 
 " --- Colors ----
 
-set termguicolors       " enable 24-bit true colors
 set background=dark
 
 " Editor color scheme
-colorscheme gruvbox
+colorscheme dim
 
 " Airline theme
-let g:airline_theme='gruvbox'
+let g:airline_theme='deus'
 
-" Remove background color
-highlight Normal ctermbg=none guibg=none
-highlight VertSplit ctermbg=none guibg=none
+" Set background colors
+highlight clear VertSplit
 highlight clear SignColumn
+
+let &colorcolumn=join(range(81,999),",")
+
 
 " --- Invisibles ---
 
-"set listchars=tab:»\ ,trail:·,eol:¬,extends:→,precedes:←
-"set list
-"highlight Specialkey ctermfg=239 guifg=#504945
-"highlight NonText ctermfg=239 guifg=#504945
+set list
+set listchars=tab:»\ ,trail:·,eol:¬,extends:→,precedes:←
+highlight Specialkey ctermfg=239 guifg=#504945
+highlight NonText ctermfg=239 guifg=#504945
 
 " indentLine
 let g:indentLine_setColors = 1
-let g:indentLine_char = '┆'
+let g:indentLine_char = '•'
 let g:indentLine_leadingSpaceChar='·'
 let g:indentLine_leadingSpaceEnabled='1'
+let g:indentLine_bufNameExclude = ['_.*', '*minimap', '__Tagbar__.*']
 
 " Hide tildas
-highlight EndOfBuffer ctermfg=237 guifg=#262c34
+highlight EndOfBuffer ctermfg=235
 
 " Italicize comments
 highlight Comment cterm=italic gui=italic
@@ -135,50 +134,29 @@ nnoremap <silent> <leader>n :set number! number?<CR>
 " airline
 let g:airline#extensions#ale#enabled = 1
 
-" ale
-let g:ale_completion_enabled = 1
-let g:ale_sign_column_always = 1
-
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '●'
-
-highlight ALEErrorSign ctermfg=167 guifg=#fb4934
-highlight ALEWarningSign ctermfg=214 guifg=#fabd2f
-highlight ALEInfoSign ctermfg=109 guifg=#83a598
-
-highlight ALEWarningLine ctermbg=none guibg=none
-highlight ALEWArningLine ctermbg=none guibg=none
-highlight ALEInfoLine ctermbg=none guibg=none
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources ={'_': 'ale'}
-
 " gitgutter
 let g:gitgutter_override_sign_column_highlight = 0
-let g:gitgutter_sign_added                     = '+'
-let g:gitgutter_sign_modified                  = '±'
-let g:gitgutter_sign_removed                   = '-'
-let g:gitgutter_sign_removed_first_line        = '×'
-let g:gitgutter_sign_modified_removed          = '×'
+let g:gitgutter_sign_added                     = '┃'
+let g:gitgutter_sign_modified                  = '┃'
+let g:gitgutter_sign_removed                   = '┃'
+let g:gitgutter_sign_removed_first_line        = '┃'
+let g:gitgutter_sign_modified_removed          = '┃'
 
 hi GitGutterAdd ctermbg=none guibg=none ctermfg=245
 hi GitGutterChange ctermbg=none guibg=none ctermfg=245
 hi GitGutterDelete ctermbg=none guibg=none ctermfg=245
 hi GitGutterChangeDelete ctermbg=none guibg=none ctermfg=245
 
+" minimap
+autocmd VimEnter * :Minimap
+
 " tagbar
 let g:tagbar_compact = 1
+let g:tagbar_iconchars = ['▸', '▾']
+
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+autocmd WinEnter __Tagbar__.* setlocal t_vi=
+autocmd WinLeave __Tagbar__.* setlocal t_ve=
 
 " whitespace
 let g:strip_whitespace_on_save = 1
-
-
-" --- Syntax Highlighting ---
-
-" C++
-let g:chromatica#responsive_mode = 1
-let g:chromatica#highlight_feature_level = 5
-
-autocmd InsertEnter,InsertLeave * set cul!
-
