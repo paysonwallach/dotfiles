@@ -6,6 +6,9 @@ and not set -q TMUX
     command tmux attach
 end
 
+# Source virtualfish
+eval (python3 -m virtualfish)
+
 
 # --- Aliases ---
 
