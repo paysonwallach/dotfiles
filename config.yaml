@@ -11,12 +11,18 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
-  d_bin:
-    src: bin
-    dst: ~/.local/bin
   d_iterm:
     src: iTerm
     dst: ~/.config/iTerm
+  f_brew-prune-packages:
+    src: bin/brew-prune-packages
+    dst: ~/.local/bin/brew-prune-packages
+  f_mrg:
+    src: bin/mrg
+    dst: ~/.local/bin/mrg
+  f_purge-time-machine-snapshots:
+    src: bin/purge-time-machine-snapshots
+    dst: ~/.local/bin/purge-time-machine-snapshots
   f_init.vim:
     src: init.vim
     dst: ~/.config/nvim/init.vim
@@ -62,8 +68,10 @@ profiles:
     include:
       - fish
     dotfiles:
-      - d_bin
       - d_iterm
+      - f_brew-prune-packages
+      - f_mrg
+      - f_purge-time-machine-snapshots
       - f_init.vim
       - f_tmux.conf
   Paysons-MacBook-Pro:
