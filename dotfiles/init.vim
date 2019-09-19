@@ -2,9 +2,17 @@
 
 " vim-plug
 " https://github.com/junegunn/vim-plug
+
+" install if not already
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.local/share/nvim/plugged')
 
-" General plugins
+" general plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
@@ -16,22 +24,19 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'Yggdroot/indentLine'
 
-" Syntax highlighters
+" syntax highlighters
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
-" Semantic highlighter
-"Plug 'jaxbot/semantic-highlight.vim'
-
-" Color schemes
+" color schemes
 Plug 'jeffkreeftmeijer/vim-dim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'vim-airline/vim-airline-themes'
 
-" Initialize plugin system
+" initialize plugin system
 call plug#end()
 
 
-" --- Vim Settings ---
+" --- vim Settings ---
 
 syntax on
 set hidden
@@ -65,7 +70,7 @@ set incsearch           " show search matches as you type
 
 set showtabline=0
 
-" Cursor
+" cursor
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 set guicursor=n-v-c:block-Cursor
@@ -74,24 +79,24 @@ set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 
 
-" --- Colors ----
+" --- colors ----
 
 set background=dark
 
-" Editor color scheme
+" editor color scheme
 colorscheme dim
 
-" Airline theme
+" airline theme
 let g:airline_theme='deus'
 
-" Set background colors
+" set background colors
 highlight clear VertSplit
 highlight clear SignColumn
 
 let &colorcolumn=join(range(81,999),",")
 
 
-" --- Invisibles ---
+" --- invisibles ---
 
 set list
 set listchars=tab:»\ ,trail:·,eol:¬,extends:→,precedes:←
@@ -105,14 +110,14 @@ let g:indentLine_leadingSpaceChar='·'
 let g:indentLine_leadingSpaceEnabled='1'
 let g:indentLine_bufNameExclude = ['_.*', '*minimap', '__Tagbar__.*']
 
-" Hide tildas
+" hide tildas
 highlight EndOfBuffer ctermfg=235
 
-" Italicize comments
+" italicize comments
 highlight Comment cterm=italic gui=italic
 
 
-" --- Keyboard shortcuts ---
+" --- keyboard shortcuts ---
 
 " remove need to hold down shift to enter a command
 nnoremap ; :
@@ -129,7 +134,7 @@ nnoremap <silent> <leader>tb :TagbarToggle<CR>
 nnoremap <silent> <leader>n :set number! number?<CR>
 
 
-" --- General Plugin Configurations ---
+" --- general plugin configurations ---
 
 " airline
 let g:airline#extensions#ale#enabled = 1
