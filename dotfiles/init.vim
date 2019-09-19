@@ -24,13 +24,10 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'Yggdroot/indentLine'
 
-" Syntax highlighters
+" syntax highlighters
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
-" Semantic highlighter
-"Plug 'jaxbot/semantic-highlight.vim'
-
-" Color schemes
+" color schemes
 Plug 'jeffkreeftmeijer/vim-dim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'vim-airline/vim-airline-themes'
@@ -86,20 +83,20 @@ set guicursor+=i:blinkwait10
 
 set background=dark
 
-" Editor color scheme
+" editor color scheme
 colorscheme dim
 
-" Airline theme
+" airline theme
 let g:airline_theme='deus'
 
-" Set background colors
+" set background colors
 highlight clear VertSplit
 highlight clear SignColumn
 
 let &colorcolumn=join(range(81,999),",")
 
 
-" --- Invisibles ---
+" --- invisibles ---
 
 set list
 set listchars=tab:»\ ,trail:·,eol:¬,extends:→,precedes:←
@@ -113,7 +110,7 @@ let g:indentLine_leadingSpaceChar='·'
 let g:indentLine_leadingSpaceEnabled='1'
 let g:indentLine_bufNameExclude = ['_.*', '*minimap', '__Tagbar__.*']
 
-" Hide tildas
+" hide tildas
 highlight EndOfBuffer ctermfg=235
 
 " italicize comments
