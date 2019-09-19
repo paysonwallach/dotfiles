@@ -2,7 +2,7 @@
 
 echo "Configuring development tools..."
 
-# Check for Xcode Command Line Tools
+# install Xcode Command Line Tools
 if [[ $(xcode-select --version) ]]; then
   echo "Xcode command tools already installed"
 else
@@ -10,7 +10,7 @@ else
   $(xcode-select --install)
 fi
 
-# Check for Homebrew
+# install Homebrew
 if [[ $(brew --version) ]] ; then
     echo "Attempting to update Homebrew..."
     brew update
@@ -21,49 +21,14 @@ fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-brew update && brew cleanup
+brew bundle install --file="$HOME/.config/brew/Brewfile"
 
-brew install \
-    bat \
-    carthage \
-    cmake \
-    cocoapods \
-    fish \
-    git-lfs \
-    gotop \
-    imagemagick \
-    mas \
-    meson \
-    mosh \
-    neovim \
-    ninja \
-    nvm \
-    pwgen \
-    pyenv \
-    ruby \
-    swiftenv \
-    terminal-notifier \
-    tmux \
-    trash \
-    wget
-
-brew tap caskroom/cask
-brew tap caskroom/fonts
-
-brew cask install \
-    aerial \
-    atom \
-    docker \
-    caskroom/fonts/font-hasklig \
-    virtualbox \
-    virtualbox-extension-pack
-
-# Change shell to fish
+# change shell to fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 
 chsh -s /usr/local/bin/fish
 
-# Install Xcode themes
+# install Xcode themes
 mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes
 
 git clone https://github.com/paysonwallach/Material-Light-Theme-Xcode.git /tmp/material-light-theme

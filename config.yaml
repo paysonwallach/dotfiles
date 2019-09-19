@@ -53,27 +53,31 @@ dotfiles:
   f_showhidden.fish:
     src: fish/functions/showHidden.fish
     dst: ~/.config/fish/functions/showHidden.fish
+  f_brewfile:
+    src: brew/Brewfile
+    dst: ~/.config/brew/Brewfile
 profiles:
   fish:
     dotfiles:
-      - f_fishfile
-      - f_config.fish
-      - f_fish_greeting.fish
-      - f_fish_prompt.fish
-      - f_fish_title.fish
-      - f_newdir.fish
-      - f_hidehidden.fish
-      - f_showhidden.fish
+    - f_fishfile
+    - f_config.fish
+    - f_fish_greeting.fish
+    - f_fish_prompt.fish
+    - f_fish_title.fish
+    - f_newdir.fish
+    - f_hidehidden.fish
+    - f_showhidden.fish
   Paysons-Mac-Pro:
     include:
-      - fish
+    - fish
     dotfiles:
-      - d_iterm
-      - f_brew-prune-packages
-      - f_mrg
-      - f_purge-time-machine-snapshots
-      - f_init.vim
-      - f_tmux.conf
+    - d_iterm
+    - f_brew-prune-packages
+    - f_mrg
+    - f_purge-time-machine-snapshots
+    - f_init.vim
+    - f_tmux.conf
+    - f_brewfile
   Paysons-MacBook-Pro:
     include:
-      - Paysons-Mac-Pro
+    - Paysons-Mac-Pro
