@@ -1,34 +1,42 @@
-set nocompatible
-
-" --- Install Plugins ---
+"--- Install Plugins ---
 
 " vim-plug
 " https://github.com/junegunn/vim-plug
+
+" install if not already
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.local/share/nvim/plugged')
 
-" General plugins
+" general plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'andymass/vim-matchup'
 Plug 'godlygeek/tabular'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tpope/vim-repeat'
+Plug 'majutsushi/tagbar'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'severin-lemaignan/vim-minimap'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'wincent/terminus'
 Plug 'Yggdroot/indentLine'
 
-" Color schemes
-Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim'
+" syntax highlighters
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
-" Initialize plugin system
+" color schemes
+Plug 'jeffkreeftmeijer/vim-dim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'vim-airline/vim-airline-themes'
+
+" initialize plugin system
 call plug#end()
 
 
-" --- Vim Settings ---
+" --- vim Settings ---
 
 syntax on
 set hidden
@@ -60,43 +68,56 @@ set smartcase           " ignore case if search pattern is all lowercase,
 set hlsearch            " highlight search terms
 set incsearch           " show search matches as you type
 
+set showtabline=0
 
-" --- Colors ----
+" cursor
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
-set termguicolors       " enable 24-bit true colors
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
+
+
+" --- colors ----
+
 set background=dark
 
-" Editor color scheme
-colorscheme base16-onedark
+" editor color scheme
+colorscheme dim
 
-" Airline theme
-let g:airline_theme='base16'
+" airline theme
+let g:airline_theme='deus'
 
-" Remove background colors
-hi VertSplit ctermbg=none guibg=none
-hi SignColumn ctermbg=none guibg=none
+" set background colors
+highlight clear VertSplit
+highlight clear SignColumn
+
+let &colorcolumn=join(range(81,999),",")
 
 
-" --- Invisibles ---
+" --- invisibles ---
 
-"set listchars=tab:»\ ,trail:·,eol:¬,extends:→,precedes:←
-"set list
-"highlight Specialkey ctermfg=239 guifg=#504945
-"highlight NonText ctermfg=239 guifg=#504945
+set list
+set listchars=tab:»\ ,trail:·,eol:¬,extends:→,precedes:←
+highlight Specialkey ctermfg=239 guifg=#504945
+highlight NonText ctermfg=239 guifg=#504945
 
 " indentLine
 let g:indentLine_setColors = 1
-let g:indentLine_char = '│'
-let g:indentLine_leadingSpaceChar=' '
+let g:indentLine_char = '•'
+let g:indentLine_leadingSpaceChar='·'
 let g:indentLine_leadingSpaceEnabled='1'
+let g:indentLine_bufNameExclude = ['_.*', '*minimap', '__Tagbar__.*']
 
-" Italicize comments
-hi Comment cterm=italic gui=italic
+" hide tildas
+highlight EndOfBuffer ctermfg=235
 
-autocmd InsertEnter,InsertLeave * set cul!
+" italicize comments
+highlight Comment cterm=italic gui=italic
 
 
-" --- Keyboard shortcuts ---
+" --- keyboard shortcuts ---
 
 " remove need to hold down shift to enter a command
 nnoremap ; :
@@ -106,34 +127,17 @@ cmap w!! w !sudo tee % >/dev/null
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
+" toggle tagbar
+nnoremap <silent> <leader>tb :TagbarToggle<CR>
+
 " toggle line numbers
 nnoremap <silent> <leader>n :set number! number?<CR>
 
 
-" --- General Plugin Configurations ---
+" --- general plugin configurations ---
 
 " airline
 let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 0
-
-" ale
-let g:ale_completion_enabled = 1
-let g:ale_sign_column_always = 1
-
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '●'
-
-hi ALEErrorSign ctermfg=167 guifg=#fb4934
-hi ALEWarningSign ctermfg=214 guifg=#fabd2f
-hi ALEInfoSign ctermfg=109 guifg=#83a598
-
-hi ALEWarningLine ctermbg=none guibg=none
-hi ALEWArningLine ctermbg=none guibg=none
-hi ALEInfoLine ctermbg=none guibg=none
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources ={'_': 'ale'}
 
 " gitgutter
 let g:gitgutter_override_sign_column_highlight = 0
@@ -148,19 +152,16 @@ hi GitGutterChange ctermbg=none guibg=none ctermfg=245
 hi GitGutterDelete ctermbg=none guibg=none ctermfg=245
 hi GitGutterChangeDelete ctermbg=none guibg=none ctermfg=245
 
+" minimap
+autocmd VimEnter * :Minimap
+
+" tagbar
+let g:tagbar_compact = 1
+let g:tagbar_iconchars = ['▸', '▾']
+
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+autocmd WinEnter __Tagbar__.* setlocal t_vi=
+autocmd WinLeave __Tagbar__.* setlocal t_ve=
+
 " whitespace
 let g:strip_whitespace_on_save = 1
-
-
-" --- Syntax Highlighting ---
-
-if executable('pyls')
-    " pip install python-language-server
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
-
-autocmd BufRead,BufNewFile *.py let python_highlight_all=1
