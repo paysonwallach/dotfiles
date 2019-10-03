@@ -6,6 +6,12 @@ function fish_prompt
     set -l current_directory (__parse_current_directory)
     set -l command_duration ""
 
+    # Check if user is in a virtual environment
+    if set -q VIRTUAL_ENV
+        set -l env_name (basename "$VIRTUAL_ENV")
+        set prompt "$minima_color_gray($env_name)$minima_color_normal "
+    end
+
 
     # Check if user is in an SSH session
     if [ "$SSH_CONNECTION" != "" ]
