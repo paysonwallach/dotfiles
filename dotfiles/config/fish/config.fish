@@ -14,6 +14,7 @@ eval (python3 -m virtualfish)
 # Dotdrop
 alias dotdrop '/home/paysonwallach/.dotfiles/dotdrop.sh --cfg=/home/paysonwallach/.dotfiles/config.yaml'
 
+
 #--- Environment ---
 
 # Pyenv
