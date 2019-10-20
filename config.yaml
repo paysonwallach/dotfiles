@@ -77,6 +77,9 @@ dotfiles:
   f_fish_title.fish:
     src: config/fish/functions/fish_title.fish
     dst: ~/.config/fish/functions/fish_title.fish
+  f_fuck.fish:
+    src: config/fish/functions/fuck.fish
+    dst: ~/.config/fish/functions/fuck.fish
   f_newdir.fish:
     src: config/fish/functions/newdir.fish
     dst: ~/.config/fish/functions/newdir.fish
@@ -93,6 +96,7 @@ profiles:
     - f_fish_greeting.fish
     - f_fish_prompt.fish
     - f_fish_title.fish
+    - f_fuck.fish
     - f_newdir.fish
     - f_fishfile
   gnome:
