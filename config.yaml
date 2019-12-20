@@ -59,6 +59,9 @@ dotfiles:
   f_brewfile:
     src: brew/Brewfile
     dst: ~/.config/brew/Brewfile
+  f_ipython_config.py:
+    src: ipython/profile_default/ipython_config.py
+    dst: ~/.ipython/profile_default/ipython_config.py
 profiles:
   fish:
     dotfiles:
@@ -82,6 +85,7 @@ profiles:
     - f_init.vim
     - f_tmux.conf
     - f_brewfile
+    - f_ipython_config.py
   Paysons-MacBook-Pro:
     include:
     - Paysons-Mac-Pro
