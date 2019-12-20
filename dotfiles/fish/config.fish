@@ -1,4 +1,4 @@
-# Launch tmux upon opening of new terminal
+# launch tmux upon opening of new terminal
 if status is-interactive
 and not test -n "$SSH_TTY"
 and not set -q TMUX
@@ -6,15 +6,18 @@ and not set -q TMUX
     command tmux attach
 end
 
-# Source virtualfish
+# source pyenv
+status --is-interactive; and source (pyenv init -|psub)
+
+# source virtualfish
 eval (python3 -m virtualfish)
 
 
-# --- Aliases ---
+# --- aliases ---
 
-# Dotdrop
+# dotdrop
 alias dotdrop $HOME/.dotfiles/dotdrop.sh
 
 
-# --- iTerm2 Shell Integration ---
+# --- iTerm2 shell integration ---
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
