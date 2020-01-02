@@ -32,17 +32,11 @@ dotfiles:
   f_config.fish:
     src: fish/config.fish
     dst: ~/.config/fish/config.fish
-  f_fish_greeting.fish:
-    src: fish/functions/fish_greeting.fish
-    dst: ~/.config/fish/functions/fish_greeting.fish
-  f_fish_prompt.fish:
-    src: fish/functions/fish_prompt.fish
-    dst: ~/.config/fish/functions/fish_prompt.fish
   f_fish_title.fish:
     src: fish/functions/fish_title.fish
     dst: ~/.config/fish/functions/fish_title.fish
   f_fuck.fish:
-    src: config/fish/functions/fuck.fish
+    src: fish/functions/fuck.fish
     dst: ~/.config/fish/functions/fuck.fish
   f_newdir.fish:
     src: fish/functions/newdir.fish
@@ -67,8 +61,6 @@ profiles:
     dotfiles:
       - f_fishfile
       - f_config.fish
-      - f_fish_greeting.fish
-      - f_fish_prompt.fish
       - f_fish_title.fish
       - f_fuck.fish
       - f_newdir.fish
