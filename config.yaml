@@ -14,15 +14,33 @@ dotfiles:
   d_iterm:
     src: iTerm
     dst: ~/.config/iTerm
+  f_brew-prune-packages:
+    src: bin/brew-prune-packages
+    dst: ~/.local/bin/brew-prune-packages
+  f_mrg:
+    src: bin/mrg
+    dst: ~/.local/bin/mrg
+  f_purge-time-machine-snapshots:
+    src: bin/purge-time-machine-snapshots
+    dst: ~/.local/bin/purge-time-machine-snapshots
+  f_repair-permissions:
+    src: bin/repair-permissions
+    dst: ~/.local/bin/repair-permissions
+  f_brewfile:
+    src: brew/Brewfile
+    dst: ~/.config/brew/Brewfile
+  f_ipython_config.py:
+    src: ipython/profile_default/ipython_config.py
+    dst: ~/.ipython/profile_default/ipython_config.py
   f_init.vim:
     src: init.vim
     dst: ~/.config/nvim/init.vim
   f_tmux.conf:
     src: tmux.conf
     dst: ~/.tmux.conf
-  f_repair-permissions:
-    src: bin/repair-permissions
-    dst: ~/.local/bin/repair-permissions
+  f_fishfile:
+    src: fish/fishfile
+    dst: ~/.config/fish/fishfile
   f_config.fish:
     src: fish/config.fish
     dst: ~/.config/fish/config.fish
@@ -32,27 +50,17 @@ dotfiles:
   f_newdir.fish:
     src: fish/functions/newdir.fish
     dst: ~/.config/fish/functions/newdir.fish
-  f_fishfile:
-    src: fish/fishfile
-    dst: ~/.config/fish/fishfile
   f_hidehidden.fish:
     src: fish/functions/hideHidden.fish
     dst: ~/.config/fish/functions/hideHidden.fish
   f_showhidden.fish:
     src: fish/functions/showHidden.fish
     dst: ~/.config/fish/functions/showHidden.fish
-  f_brewfile:
-    src: brew/Brewfile
-    dst: ~/.config/brew/Brewfile
-  f_ipython_config.py:
-    src: ipython/profile_default/ipython_config.py
-    dst: ~/.ipython/profile_default/ipython_config.py
 profiles:
   fish:
     dotfiles:
       - f_fishfile
       - f_config.fish
-      - f_fish_title.fish
       - f_fuck.fish
       - f_newdir.fish
       - f_hidehidden.fish
@@ -66,11 +74,10 @@ profiles:
     - f_mrg
     - f_purge-time-machine-snapshots
     - f_repair-permissions
+    - f_brewfile
     - f_ipython_config.py
     - f_init.vim
     - f_tmux.conf
-    - f_brewfile
-    - f_ipython_config.py
   Paysons-MacBook-Pro:
     include:
     - Paysons-Mac-Pro
