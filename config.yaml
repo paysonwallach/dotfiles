@@ -20,6 +20,9 @@ dotfiles:
   f_tmux.conf:
     src: tmux.conf
     dst: ~/.tmux.conf
+  f_repair-permissions:
+    src: bin/repair-permissions
+    dst: ~/.local/bin/repair-permissions
   f_config.fish:
     src: fish/config.fish
     dst: ~/.config/fish/config.fish
@@ -62,6 +65,7 @@ profiles:
     - f_brew-prune-packages
     - f_mrg
     - f_purge-time-machine-snapshots
+    - f_repair-permissions
     - f_init.vim
     - f_tmux.conf
     - f_brewfile
