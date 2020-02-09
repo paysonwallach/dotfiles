@@ -66,6 +66,7 @@ profiles:
     - f_mrg
     - f_purge-time-machine-snapshots
     - f_repair-permissions
+    - f_ipython_config.py
     - f_init.vim
     - f_tmux.conf
     - f_brewfile
