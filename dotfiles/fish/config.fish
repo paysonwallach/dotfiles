@@ -16,7 +16,7 @@ eval (python3 -m virtualfish)
 # --- aliases ---
 
 # dotdrop
-alias dotdrop $HOME/.dotfiles/dotdrop.sh
+alias dotdrop "$HOME/.dotfiles/dotdrop.sh"
 
 
 # --- iTerm2 shell integration ---
