@@ -6,6 +6,11 @@ and not set -q TMUX
     command tmux attach
 end
 
+# bashhub
+if [ -f "$HOME/.bashhub/bashhub.fish" ]
+    source "$HOME/.bashhub/bashhub.fish"
+end
+
 # source pyenv
 status --is-interactive; and source (pyenv init -|psub)
 
