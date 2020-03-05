@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
 for dir in $1; do
-    for subDir in $(find $dir -type d); do
-        chmod 775 $subDir
-    done
-    for file in $(find $dir -type f); do
-            chmod 644 $file
-        done
+    find "$dir" -type d -exec chmod 775 {} \;
+    find "$dir" -type f -exec chmod 644 {} \;
 done
