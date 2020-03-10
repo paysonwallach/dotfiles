@@ -1,0 +1,4 @@
+c.InteractiveShellApp.extensions = [
+    'jupyternotify'
+]
+
