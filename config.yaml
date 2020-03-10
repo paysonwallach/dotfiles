@@ -83,6 +83,9 @@ dotfiles:
   f_mrg:
     src: bin/mrg
     dst: ~/.local/bin/mrg
+  f_repair-permissions:
+    src: bin/repair-permissions
+    dst: ~/.local/bin/repair-permissions
   f_pacfile:
     src: pacfile
     dst: ~/.config/pacfile
@@ -130,4 +133,5 @@ profiles:
     - fish
     dotfiles:
     - f_mrg
+    - f_repair-permissions
     - f_pacfile
