@@ -9,10 +9,7 @@ end
 eval (python3 -m virtualfish)
 
 
-# --- Aliases ---
 
-# Dotdrop
-alias dotdrop '/home/paysonwallach/.dotfiles/dotdrop.sh --cfg=/home/paysonwallach/.dotfiles/config.yaml'
 
 
 #--- Environment ---

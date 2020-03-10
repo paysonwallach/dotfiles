@@ -71,6 +71,9 @@ dotfiles:
   f_fish_title.fish:
     src: config/fish/functions/fish_title.fish
     dst: ~/.config/fish/functions/fish_title.fish
+  f_dotdrop.fish:
+    src:                config/fish/functions/dotdrop.fish
+    dst:                ~/.config/fish/functions/dotdrop.fish
   f_fuck.fish:
     src: config/fish/functions/fuck.fish
     dst: ~/.config/fish/functions/fuck.fish
@@ -88,6 +91,7 @@ profiles:
     dotfiles:
     - f_config.fish
     - f_fish_title.fish
+    - f_dotdrop.fish
     - f_fuck.fish
     - f_newdir.fish
     - f_fishfile
