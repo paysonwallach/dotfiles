@@ -18,11 +18,5 @@ status --is-interactive; and source (pyenv init -|psub)
 eval (python3 -m virtualfish)
 
 
-# --- aliases ---
-
-# dotdrop
-alias dotdrop "$HOME/.dotfiles/dotdrop.sh"
-
-
 # --- iTerm2 shell integration ---
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
