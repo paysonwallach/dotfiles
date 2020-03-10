@@ -1,82 +1,82 @@
 config:
-  backup: true
-  banner: false
-  create: true
-  dotpath: dotfiles
-  ignoreempty: false
-  keepdot: false
+  backup:               true
+  banner:               false
+  create:               true
+  dotpath:              dotfiles
+  ignoreempty:          false
+  keepdot:              false
   link_dotfile_default: nolink
-  link_on_import: nolink
-  longkey: false
-  showdiff: false
-  workdir: ~/.config/dotdrop
+  link_on_import:       nolink
+  longkey:              false
+  showdiff:             false
+  workdir:              ~/.config/dotdrop
 dotfiles:
   d_autostart:
-    src: config/autostart
-    dst: ~/.config/autostart
+    src:                config/autostart
+    dst:                ~/.config/autostart
   d_gtk-2.0:
-    src: config/gtk-2.0
-    dst: ~/.config/gtk-2.0
+    src:                config/gtk-2.0
+    dst:                ~/.config/gtk-2.0
   d_gtk-3.0:
-    src: config/gtk-3.0
-    dst: ~/.config/gtk-3.0
+    src:                config/gtk-3.0
+    dst:                ~/.config/gtk-3.0
   d_polybar:
-    dst: ~/.config/polybar
-    src: config/polybar
+    dst:                ~/.config/polybar
+    src:                config/polybar
   d_rofi:
-    dst: ~/.config/rofi
-    src: config/rofi
+    dst:                ~/.config/rofi
+    src:                config/rofi
   d_utilities:
-    dst: ~/.config/utilities
-    src: config/utilities
+    dst:                ~/.config/utilities
+    src:                config/utilities
   f_bspwmrc:
-    dst: ~/.config/bspwm/bspwmrc
-    src: config/bspwm/bspwmrc
+    dst:                ~/.config/bspwm/bspwmrc
+    src:                config/bspwm/bspwmrc
   f_compton.conf:
-    dst: ~/.config/compton/compton.conf
-    src: config/compton/compton.conf
+    dst:                ~/.config/compton/compton.conf
+    src:                config/compton/compton.conf
   f_dunstrc:
-    dst: ~/.config/dunst/dunstrc
-    src: config/dunst/dunstrc
+    dst:                ~/.config/dunst/dunstrc
+    src:                config/dunst/dunstrc
   f_init.vim:
-    dst: ~/.config/nvim/init.vim
-    src: config/nvim/init.vim
+    dst:                ~/.config/nvim/init.vim
+    src:                config/nvim/init.vim
   f_profile:
-    dst: ~/.profile
-    src: profile
+    dst:                ~/.profile
+    src:                profile
   f_sxhkdrc:
-    dst: ~/.config/sxhkd/sxhkdrc
-    src: config/sxhkd/sxhkdrc
+    dst:                ~/.config/sxhkd/sxhkdrc
+    src:                config/sxhkd/sxhkdrc
   f_tmux.conf:
-    dst: ~/.tmux.conf
-    src: tmux.conf
+    dst:                ~/.tmux.conf
+    src:                tmux.conf
   f_xbindkeysrc:
-    dst: ~/.Xbindkeysrc
-    src: Xbindkeysrc
+    dst:                ~/.Xbindkeysrc
+    src:                Xbindkeysrc
   f_xmodmap:
-    dst: ~/.Xmodmap
-    src: Xmodmap
+    dst:                ~/.Xmodmap
+    src:                Xmodmap
   f_xresources:
-    dst: ~/.Xresources
-    src: Xresources
+    dst:                ~/.Xresources
+    src:                Xresources
   f_xscreensaver:
-    dst: ~/.xscreensaver
-    src: xscreensaver
+    dst:                ~/.xscreensaver
+    src:                xscreensaver
   f_xsession:
-    dst: ~/.xsession
-    src: xsession
+    dst:                ~/.xsession
+    src:                xsession
   f_config.fish:
-    dst: ~/.config/fish/config.fish
-    src: config/fish/config.fish
+    dst:                ~/.config/fish/config.fish
+    src:                config/fish/config.fish
   f_dotdrop.fish:
-    src:                config/fish/functions/dotdrop.fish
-    dst:                ~/.config/fish/functions/dotdrop.fish
+    src: config/fish/functions/dotdrop.fish
+    dst: ~/.config/fish/functions/dotdrop.fish
   f_fuck.fish:
-    src: config/fish/functions/fuck.fish
-    dst: ~/.config/fish/functions/fuck.fish
+    src:                config/fish/functions/fuck.fish
+    dst:                ~/.config/fish/functions/fuck.fish
   f_newdir.fish:
-    src: config/fish/functions/newdir.fish
-    dst: ~/.config/fish/functions/newdir.fish
+    src:                config/fish/functions/newdir.fish
+    dst:                ~/.config/fish/functions/newdir.fish
   f_fishfile:
     src: config/fish/fishfile
     dst: ~/.config/fish/fishfile
@@ -90,8 +90,8 @@ dotfiles:
     src: ipython/profile_default/ipython_config.py
     dst: ~/.ipython/profile_default/ipython_config.py
   f_pacfile:
-    src: pacfile
-    dst: ~/.config/pacfile
+    src:                pacfile
+    dst:                ~/.config/pacfile
 profiles:
   fish:
     dotfiles:
@@ -131,7 +131,7 @@ profiles:
     - f_sxhkdrc
     - f_xbindkeysrc
     - f_xsession
-  Paysons-MacBook-Pro:
+  Paysons-Mac-Pro:
     include:
     - fish
     dotfiles:
