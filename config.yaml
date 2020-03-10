@@ -80,6 +80,9 @@ dotfiles:
   f_fishfile:
     src: config/fish/fishfile
     dst: ~/.config/fish/fishfile
+  f_mrg:
+    src: bin/mrg
+    dst: ~/.local/bin/mrg
   f_pacfile:
     src: pacfile
     dst: ~/.config/pacfile
@@ -126,4 +129,5 @@ profiles:
     include:
     - fish
     dotfiles:
+    - f_mrg
     - f_pacfile
