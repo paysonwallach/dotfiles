@@ -18,3 +18,5 @@ eval (python3 -m virtualfish)
 set -x PYENV_ROOT "$HOME/.pyenv"
 
 status --is-interactive; and source (pyenv init -|psub)
+# source zoxide
+zoxide init fish | source
