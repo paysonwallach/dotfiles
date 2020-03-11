@@ -17,6 +17,9 @@ status --is-interactive; and source (pyenv init -|psub)
 # source virtualfish
 eval (python3 -m virtualfish)
 
+# source zoxide
+zoxide init fish | source
+
 # --- environment ---
 export RUBY_CONFIGURE_OPTS=--with-openssl-dir=(brew --prefix openssl@1.1)
 
