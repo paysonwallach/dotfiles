@@ -89,48 +89,47 @@ dotfiles:
   f_ipython_config.py:
     src: ipython/profile_default/ipython_config.py
     dst: ~/.ipython/profile_default/ipython_config.py
-  f_pacfile:
-    src:                pacfile
-    dst:                ~/.config/pacfile
+  f_init.vim:
+    src: init.vim
+    dst: ~/.config/nvim/init.vim
+  f_tmux.conf:
+    src: tmux.conf
+    dst: ~/.tmux.conf
+  f_fishfile:
+    src: fish/fishfile
+    dst: ~/.config/fish/fishfile
+  f_config.fish:
+    src: fish/config.fish
+    dst: ~/.config/fish/config.fish
+  f_dotdrop.fish:
+    src: fish/functions/dotdrop.fish
+    dst: ~/.config/fish/functions/dotdrop.fish
+  f_fext.fish:
+    src: fish/functions/fext.fish
+    dst: ~/.config/fish/functions/fext.fish
+  f_fuck.fish:
+    src: fish/functions/fuck.fish
+    dst: ~/.config/fish/functions/fuck.fish
+  f_newdir.fish:
+    src: fish/functions/newdir.fish
+    dst: ~/.config/fish/functions/newdir.fish
+  f_hidehidden.fish:
+    src: fish/functions/hideHidden.fish
+    dst: ~/.config/fish/functions/hideHidden.fish
+  f_showhidden.fish:
+    src: fish/functions/showHidden.fish
+    dst: ~/.config/fish/functions/showHidden.fish
 profiles:
   fish:
     dotfiles:
-    - f_config.fish
-    - f_dotdrop.fish
-    - f_fuck.fish
-    - f_newdir.fish
-    - f_fishfile
-  gnome:
-    include:
-    - fish
-    - x
-    dotfiles:
-    - d_autostart
-    - d_gtk-2.0
-    - d_gtk-3.0
-    - f_init.vim
-    - f_tmux.conf
-  x:
-    dotfiles:
-    - f_xmodmap
-    - f_xresources
-    - f_xscreensaver
-  arch_bspwm:
-    include:
-    - fish
-    - gnome
-    - x
-    dotfiles:
-    - d_polybar
-    - d_rofi
-    - d_utilities
-    - f_bspwmrc
-    - f_compton.conf
-    - f_dunstrc
-    - f_profile
-    - f_sxhkdrc
-    - f_xbindkeysrc
-    - f_xsession
+      - f_fishfile
+      - f_config.fish
+      - f_dotdrop.fish
+      - f_fuck.fish
+      - f_newdir.fish
+      - f_hidehidden.fish
+      - f_showhidden.fish
+      - f_fext.fish
   Paysons-Mac-Pro:
     include:
     - fish
