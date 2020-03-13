@@ -26,21 +26,21 @@ dotfiles:
   f_repair-permissions:
     src: bin/repair-permissions
     dst: ~/.local/bin/repair-permissions
-  f_brewfile:
-    src: brew/Brewfile
-    dst: ~/.config/brew/Brewfile
   f_aliases:
     src: aliases
     dst: ~/.aliases
   f_ipython_config.py:
     src: ipython/profile_default/ipython_config.py
     dst: ~/.ipython/profile_default/ipython_config.py
-  f_init.vim:
-    src: init.vim
-    dst: ~/.config/nvim/init.vim
   f_tmux.conf:
     src: tmux.conf
     dst: ~/.tmux.conf
+  f_brewfile:
+    src: brew/Brewfile
+    dst: ~/.config/brew/Brewfile
+  f_init.vim:
+    src: init.vim
+    dst: ~/.config/nvim/init.vim
   f_fishfile:
     src: fish/fishfile
     dst: ~/.config/fish/fishfile
@@ -59,30 +59,30 @@ dotfiles:
   f_fuck.fish:
     src: fish/functions/fuck.fish
     dst: ~/.config/fish/functions/fuck.fish
-  f_newdir.fish:
-    src: fish/functions/newdir.fish
-    dst: ~/.config/fish/functions/newdir.fish
   f_hidehidden.fish:
     src: fish/functions/hideHidden.fish
     dst: ~/.config/fish/functions/hideHidden.fish
   f_showhidden.fish:
     src: fish/functions/showHidden.fish
     dst: ~/.config/fish/functions/showHidden.fish
+  f_newdir.fish:
+    src: fish/functions/newdir.fish
+    dst: ~/.config/fish/functions/newdir.fish
   f_up.fish:
     src: fish/functions/up.fish
     dst: ~/.config/fish/functions/up.fish
 profiles:
   fish:
     dotfiles:
-      - f_fishfile
-      - f_config.fish
-      - f_dotdrop.fish
-      - f_fuck.fish
-      - f_newdir.fish
-      - f_hidehidden.fish
-      - f_showhidden.fish
+    - f_fishfile
+    - f_config.fish
+    - f_dotdrop.fish
     - f_fext.fish
     - f_fn.fish
+    - f_fuck.fish
+    - f_hidehidden.fish
+    - f_showhidden.fish
+    - f_newdir.fish
     - f_up.fish
   Paysons-Mac-Pro:
     include:
@@ -93,11 +93,11 @@ profiles:
     - f_mrg
     - f_purge-time-machine-snapshots
     - f_repair-permissions
-    - f_brewfile
     - f_aliases
     - f_ipython_config.py
-    - f_init.vim
     - f_tmux.conf
+    - f_brewfile
+    - f_init.vim
   Paysons-MacBook-Pro:
     include:
     - Paysons-Mac-Pro
