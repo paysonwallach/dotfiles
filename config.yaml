@@ -53,6 +53,9 @@ dotfiles:
   f_fext.fish:
     src: fish/functions/fext.fish
     dst: ~/.config/fish/functions/fext.fish
+  f_fn.fish:
+    src: fish/functions/fn.fish
+    dst: ~/.config/fish/functions/fn.fish
   f_fuck.fish:
     src: fish/functions/fuck.fish
     dst: ~/.config/fish/functions/fuck.fish
@@ -76,6 +79,7 @@ profiles:
       - f_hidehidden.fish
       - f_showhidden.fish
     - f_fext.fish
+    - f_fn.fish
   Paysons-Mac-Pro:
     include:
     - fish
