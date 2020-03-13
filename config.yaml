@@ -68,6 +68,9 @@ dotfiles:
   f_showhidden.fish:
     src: fish/functions/showHidden.fish
     dst: ~/.config/fish/functions/showHidden.fish
+  f_up.fish:
+    src: fish/functions/up.fish
+    dst: ~/.config/fish/functions/up.fish
 profiles:
   fish:
     dotfiles:
@@ -80,6 +83,7 @@ profiles:
       - f_showhidden.fish
     - f_fext.fish
     - f_fn.fish
+    - f_up.fish
   Paysons-Mac-Pro:
     include:
     - fish
