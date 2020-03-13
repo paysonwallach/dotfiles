@@ -1,0 +1,4 @@
+alias md='mkdir -p'
+alias py='python'
+alias ipy='ipython'
+alias v="nvim"

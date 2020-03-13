@@ -29,6 +29,9 @@ dotfiles:
   f_brewfile:
     src: brew/Brewfile
     dst: ~/.config/brew/Brewfile
+  f_aliases:
+    src: aliases
+    dst: ~/.aliases
   f_ipython_config.py:
     src: ipython/profile_default/ipython_config.py
     dst: ~/.ipython/profile_default/ipython_config.py
@@ -79,6 +82,7 @@ profiles:
     - f_purge-time-machine-snapshots
     - f_repair-permissions
     - f_brewfile
+    - f_aliases
     - f_ipython_config.py
     - f_init.vim
     - f_tmux.conf
