@@ -6,9 +6,7 @@ and not set -q TMUX
 end
 
 # source bashhub
-if [ -f "$HOME/.bashhub/bashhub.fish" ]
-    source "$HOME/.bashhub/bashhub.fish"
-end
+[ -f "$HOME/.bashhub/bashhub.fish" ]; and source "$HOME/.bashhub/bashhub.fish"
 
 # source pyenv
 status --is-interactive; and source (pyenv init -|psub)
