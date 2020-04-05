@@ -25,20 +25,20 @@ Plug 'vim-airline/vim-airline'
 Plug 'Yggdroot/indentLine'
 
 " syntax highlighters
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " color schemes
 Plug 'jeffkreeftmeijer/vim-dim'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'vim-airline/vim-airline-themes'
+Plug 'khatiba/vim-airline-themes'
 
 " initialize plugin system
 call plug#end()
 
 
-" --- vim Settings ---
+" --- vim settings ---
 
 syntax on
+
 set hidden
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
@@ -87,7 +87,7 @@ set background=dark
 colorscheme dim
 
 " airline theme
-let g:airline_theme='deus'
+let g:airline_theme='transparent'
 
 " set background colors
 highlight clear VertSplit
@@ -122,9 +122,10 @@ highlight Comment cterm=italic gui=italic
 " remove need to hold down shift to enter a command
 nnoremap ; :
 
+" write to file with admin privileges
 cmap w!! w !sudo tee % >/dev/null
 
-" <Ctrl-l> redraws the screen and removes any search highlighting.
+" <Ctrl-l> redraws the screen and removes any search highlighting
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " toggle tagbar
@@ -152,16 +153,9 @@ hi GitGutterChange ctermbg=none guibg=none ctermfg=245
 hi GitGutterDelete ctermbg=none guibg=none ctermfg=245
 hi GitGutterChangeDelete ctermbg=none guibg=none ctermfg=245
 
-" minimap
-autocmd VimEnter * :Minimap
-
 " tagbar
 let g:tagbar_compact = 1
 let g:tagbar_iconchars = ['▸', '▾']
-
-autocmd VimEnter * nested :call tagbar#autoopen(1)
-autocmd WinEnter __Tagbar__.* setlocal t_vi=
-autocmd WinLeave __Tagbar__.* setlocal t_ve=
 
 " whitespace
 let g:strip_whitespace_on_save = 1
