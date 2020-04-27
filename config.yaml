@@ -32,9 +32,9 @@ dotfiles:
   f_ipython_config.py:
     src: ipython/profile_default/ipython_config.py
     dst: ~/.ipython/profile_default/ipython_config.py
-  f_tmux.conf:
-    src: tmux.conf
-    dst: ~/.tmux.conf
+  f_tmux_tmux.conf:
+    src: tmux/tmux.conf
+    dst: ~/.config/tmux/tmux.conf
   f_brewfile:
     src: brew/Brewfile
     dst: ~/.config/brew/Brewfile
@@ -99,7 +99,7 @@ profiles:
     - f_repair-permissions
     - f_aliases
     - f_ipython_config.py
-    - f_tmux.conf
+    - f_tmux_tmux.conf
     - f_brewfile
     - f_init.vim
   Paysons-MacBook-Pro:
