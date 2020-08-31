@@ -69,7 +69,7 @@ dotfiles:
     src: fish/functions/newdir.fish
     dst: ~/.config/fish/functions/newdir.fish
   f_su.fish:
-    src: config/fish/functions/su.fish
+    src: fish/functions/su.fish
     dst: ~/.config/fish/functions/su.fish
   f_up.fish:
     src: fish/functions/up.fish
