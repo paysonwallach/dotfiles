@@ -6,21 +6,18 @@ and not set -q TMUX
     command tmux attach
 end
 
-# source Bashhub
-if [ -f "$HOME/.bashhub/bashhub.fish" ]
-    source "$HOME/.bashhub/bashhub.fish"
-end
+# source bashhub
+[ -f "$HOME/.bashhub/bashhub.fish" ]; and source "$HOME/.bashhub/bashhub.fish"
+
 # source grc
 test -f "/etc/grc.fish"; and source "/etc/grc.fish"
 
 # source pyenv
 status --is-interactive; and source (pyenv init -|psub)
 
-# source virtualfish
-eval (python3 -m virtualfish)
-
 # source zoxide
 zoxide init fish | source
+
 
 # --- aliases ---
 if status is-login
@@ -43,9 +40,14 @@ if status is-login
     end
 end
 
-# --- environment ---
 
-export RUBY_CONFIGURE_OPTS=--with-openssl-dir=(brew --prefix openssl@1.1)
+# --- environment ---
+set -x LC_ALL en_GB.UTF-8
+{%@@ if profile == "Paysons-Mac-Pro" @@%}
+set -x RUBY_CONFIGURE_OPTS=--with-openssl-dir=(brew --prefix openssl@1.1)
+{%@@ endif @@%}
+
+status --is-interactive; and nvm use default > /dev/null
 
 # --- iTerm2 shell integration ---
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
