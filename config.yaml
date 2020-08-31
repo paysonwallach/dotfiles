@@ -1,103 +1,154 @@
 config:
-  backup: true
-  banner: false
-  create: true
-  dotpath: dotfiles
-  ignoreempty: false
-  keepdot: false
+  backup:               true
+  banner:               false
+  create:               true
+  dotpath:              dotfiles
+  ignoreempty:          false
+  keepdot:              false
   link_dotfile_default: nolink
-  link_on_import: nolink
-  longkey: false
-  showdiff: false
-  workdir: ~/.config/dotdrop
+  link_on_import:       nolink
+  longkey:              false
+  showdiff:             false
+  workdir:              ~/.config/dotdrop
 dotfiles:
-  d_iterm:
-    src: iTerm
-    dst: ~/.config/iTerm
-  f_brew-prune-packages:
-    src: bin/brew-prune-packages
-    dst: ~/.local/bin/brew-prune-packages
-  f_mrg:
-    src: bin/mrg
-    dst: ~/.local/bin/mrg
-  f_purge-time-machine-snapshots:
-    src: bin/purge-time-machine-snapshots
-    dst: ~/.local/bin/purge-time-machine-snapshots
-  f_repair-permissions:
-    src: bin/repair-permissions
-    dst: ~/.local/bin/repair-permissions
-  f_brewfile:
-    src: brew/Brewfile
-    dst: ~/.config/brew/Brewfile
-  f_aliases:
-    src: aliases
-    dst: ~/.aliases
-  f_ipython_config.py:
-    src: ipython/profile_default/ipython_config.py
-    dst: ~/.ipython/profile_default/ipython_config.py
+  d_autostart:
+    src:                config/autostart
+    dst:                ~/.config/autostart
+  d_gtk-2.0:
+    src:                config/gtk-2.0
+    dst:                ~/.config/gtk-2.0
+  d_gtk-3.0:
+    src:                config/gtk-3.0
+    dst:                ~/.config/gtk-3.0
+  d_polybar:
+    dst:                ~/.config/polybar
+    src:                config/polybar
+  d_rofi:
+    dst:                ~/.config/rofi
+    src:                config/rofi
+  d_utilities:
+    dst:                ~/.config/utilities
+    src:                config/utilities
+  f_bspwmrc:
+    dst:                ~/.config/bspwm/bspwmrc
+    src:                config/bspwm/bspwmrc
+  f_compton.conf:
+    dst:                ~/.config/compton/compton.conf
+    src:                config/compton/compton.conf
+  f_dunstrc:
+    dst:                ~/.config/dunst/dunstrc
+    src:                config/dunst/dunstrc
   f_init.vim:
-    src: init.vim
-    dst: ~/.config/nvim/init.vim
+    dst:                ~/.config/nvim/init.vim
+    src:                config/nvim/init.vim
+  f_profile:
+    dst:                ~/.profile
+    src:                profile
+  f_sxhkdrc:
+    dst:                ~/.config/sxhkd/sxhkdrc
+    src:                config/sxhkd/sxhkdrc
   f_tmux.conf:
-    src: tmux.conf
-    dst: ~/.tmux.conf
-  f_fishfile:
-    src: fish/fishfile
-    dst: ~/.config/fish/fishfile
+    dst:                ~/.tmux.conf
+    src:                tmux.conf
+  f_xbindkeysrc:
+    dst:                ~/.Xbindkeysrc
+    src:                Xbindkeysrc
+  f_xmodmap:
+    dst:                ~/.Xmodmap
+    src:                Xmodmap
+  f_xresources:
+    dst:                ~/.Xresources
+    src:                Xresources
+  f_xscreensaver:
+    dst:                ~/.xscreensaver
+    src:                xscreensaver
+  f_xsession:
+    dst:                ~/.xsession
+    src:                xsession
   f_config.fish:
-    src: fish/config.fish
-    dst: ~/.config/fish/config.fish
+    dst:                ~/.config/fish/config.fish
+    src:                config/fish/config.fish
   f_dotdrop.fish:
-    src: fish/functions/dotdrop.fish
-    dst: ~/.config/fish/functions/dotdrop.fish
+    src:                config/fish/functions/dotdrop.fish
+    dst:                ~/.config/fish/functions/dotdrop.fish
   f_fext.fish:
-    src: fish/functions/fext.fish
-    dst: ~/.config/fish/functions/fext.fish
+    src:                config/fish/functions/fext.fish
+    dst:                ~/.config/fish/functions/fext.fish
   f_fn.fish:
-    src: fish/functions/fn.fish
-    dst: ~/.config/fish/functions/fn.fish
-  f_fuck.fish:
-    src: fish/functions/fuck.fish
-    dst: ~/.config/fish/functions/fuck.fish
-  f_newdir.fish:
-    src: fish/functions/newdir.fish
-    dst: ~/.config/fish/functions/newdir.fish
-  f_hidehidden.fish:
-    src: fish/functions/hideHidden.fish
-    dst: ~/.config/fish/functions/hideHidden.fish
-  f_showhidden.fish:
-    src: fish/functions/showHidden.fish
-    dst: ~/.config/fish/functions/showHidden.fish
+    src:                config/fish/functions/fn.fish
+    dst:                ~/.config/fish/functions/fn.fish
   f_up.fish:
-    src: fish/functions/up.fish
-    dst: ~/.config/fish/functions/up.fish
+    src:                config/fish/functions/up.fish
+    dst:                ~/.config/fish/functions/up.fish
+  f_fuck.fish:
+    src:                config/fish/functions/fuck.fish
+    dst:                ~/.config/fish/functions/fuck.fish
+  f_newdir.fish:
+    src:                config/fish/functions/newdir.fish
+    dst:                ~/.config/fish/functions/newdir.fish
+  f_fishfile:
+    src:                config/fish/fishfile
+    dst:                ~/.config/fish/fishfile
+  f_mrg:
+    src:                bin/mrg
+    dst:                ~/.local/bin/mrg
+  f_repair-permissions:
+    src:                bin/repair-permissions
+    dst:                ~/.local/bin/repair-permissions
+  f_ipython_config.py:
+    src:                ipython/profile_default/ipython_config.py
+    dst:                ~/.ipython/profile_default/ipython_config.py
+  f_pacfile:
+    src:                pacfile
+    dst:                ~/.config/pacfile
 profiles:
   fish:
     dotfiles:
-      - f_fishfile
-      - f_config.fish
-      - f_dotdrop.fish
-      - f_fuck.fish
-      - f_newdir.fish
-      - f_hidehidden.fish
-      - f_showhidden.fish
-      - f_fext.fish
-      - f_fn.fish
-      - f_up.fish
+    - f_fishfile
+    - f_config.fish
+    - f_dotdrop.fish
+    - f_fext.fish
+    - f_fn.fish
+    - f_fuck.fish
+    - f_newdir.fish
+    - f_up.fish
+
+  gnome:
+    include:
+    - fish
+    - x
+    dotfiles:
+    - d_autostart
+    - d_gtk-2.0
+    - d_gtk-3.0
+    - f_init.vim
+    - f_tmux.conf
+  x:
+    dotfiles:
+    - f_xmodmap
+    - f_xresources
+    - f_xscreensaver
+  arch_bspwm:
+    include:
+    - fish
+    - gnome
+    - x
+    dotfiles:
+    - d_polybar
+    - d_rofi
+    - d_utilities
+    - f_bspwmrc
+    - f_compton.conf
+    - f_dunstrc
+    - f_profile
+    - f_sxhkdrc
+    - f_xbindkeysrc
+    - f_xsession
   Paysons-Mac-Pro:
     include:
     - fish
     dotfiles:
-    - d_iterm
-    - f_brew-prune-packages
     - f_mrg
-    - f_purge-time-machine-snapshots
     - f_repair-permissions
-    - f_brewfile
-    - f_aliases
     - f_ipython_config.py
-    - f_init.vim
-    - f_tmux.conf
-  Paysons-MacBook-Pro:
-    include:
-    - Paysons-Mac-Pro
+    - f_pacfile
