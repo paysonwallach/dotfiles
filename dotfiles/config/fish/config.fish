@@ -1,9 +1,3 @@
-# launch tmux upon opening of new terminal
-if status is-interactive
-and not set -q TMUX
-    command tmux new-session \; new-window "tmux set-option -ga terminal-overrides \",$TERM:Tc\"; tmux detach"
-    command tmux attach
-end
 
 # source bashhub
 [ -f "$HOME/.bashhub/bashhub.fish" ]; and source "$HOME/.bashhub/bashhub.fish"
