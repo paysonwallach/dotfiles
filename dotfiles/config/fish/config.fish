@@ -29,5 +29,7 @@ if status is-login
     end
 end
 
+# source grc
+test -f "/etc/grc.fish"; and source "/etc/grc.fish"
 # --- environment ---
 nvm use default > /dev/null
