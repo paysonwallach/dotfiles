@@ -89,6 +89,7 @@ go
 gobject-introspection
 go-ipfs
 gparted
+grc
 gtk-engine-murrine
 gtk-engines
 gtkmm3-docs
