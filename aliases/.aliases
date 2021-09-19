@@ -1,0 +1,10 @@
+alias f='fuck'
+alias ls='ls --color=auto'
+alias mkdir='mkdir -p'
+alias ping='ping -c 5'
+alias py='python'
+alias ipy='ipython'
+alias sudoatom='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY ATOM_HOME=/home/paysonwallach/.atom atom --no-sandbox'
+alias xpg='xkcdpass --numwords 4 --delimiter - --case random'
+alias reel='reel --host http://podcasts.paysonwallach.com'
+
