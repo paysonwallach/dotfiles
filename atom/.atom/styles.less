@@ -1,0 +1,35 @@
+atom-text-editor {
+  .decoration {
+    width: 1em;
+  }
+
+  div.line:not(.cursor-line) {
+    .trailing-whitespace {
+      background-color: @background-color-error;
+      color: contrast(@background-color-error);
+    }
+  }
+}
+
+.editor {
+  font-weight: 400;
+}
+
+.syntax--object.syntax--vala,
+.syntax--variable.syntax--vala {
+  color: #aab2be;
+}
+
+.syntax--base.syntax--vala,
+.syntax--this.syntax--vala,
+.syntax--field.syntax--vala {
+  color: #e57373;
+}
+
+.syntax--class.syntax--parent.syntax--base.syntax--vala {
+  color: darken(#ffb74d, 10%);;
+}
+
+.syntax--class.syntax--parent.syntax--subclass.syntax--vala {
+  color: #e57373;
+}

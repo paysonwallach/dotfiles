@@ -1,0 +1,197 @@
+"*":
+  "atom-beautify":
+    c:
+      default_beautifier: "clang-format"
+    coffeescript:
+      indent_size: 2
+    css:
+      beautify_on_save: true
+      no_lead_zero: true
+    general:
+      _analyticsUserId: "ATOM_BEAUTIFY__ANALYTICS_ID"
+      beautifyEntireFileOnSave: false
+    js:
+      default_beautifier: "Prettier"
+      space_in_paren: true
+    json:
+      default_beautifier: "Prettier"
+      indent_size: 2
+    python:
+      default_beautifier: "black"
+  "atom-debug-ui":
+    gutters:
+      gutterPosition: "Left"
+  "atom-ide-code-format":
+    formatOnSave: false
+  "atom-package-deps":
+    ignored: [
+      "linter-node-markdownlint"
+    ]
+  "autocomplete-plus":
+    autoActivationDelay: 500
+  "build-ninja":
+    subdirs: [
+      "build"
+    ]
+  core:
+    autoHideMenuBar: true
+    customFileTypes:
+      "source.ini": [
+        ".redacted.conf"
+        "wrap"
+      ]
+      "source.shell": [
+        "envrc"
+      ]
+      "source.turtle": [
+        "description"
+        "ontology"
+      ]
+      "source.yaml": [
+        "ambr"
+      ]
+    disabledPackages: [
+      "atom-debug-ui"
+      "atomic-blonde"
+      "auto-dark-mode"
+      "ide-sourcekit"
+      "open-on-github"
+    ]
+    followSymlinks: false
+    packagesWithKeymapsDisabled: []
+    projectHome: "/Users/paysonwallach/Projects"
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "nucleon-dark-syntax"
+    ]
+  editor:
+    fontFamily: "SF Mono Ligaturized, Menlo, Consolas, DejaVu Sans Mono, monospace"
+    fontSize: 15
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "EXCEPTION_REPORTING__USER_ID"
+  "file-icons":
+    tabPaneIcon: false
+  "fold-functions":
+    autofold: true
+  github:
+    filesystemEventDiagnostics: true
+    gitDiagnostics: true
+  "ide-java":
+    server:
+      configuration:
+        updateBuildConfiguration: "disabled"
+  "ide-python":
+    pylsPlugins:
+      autopep8:
+        enabled: false
+      pydocstyle:
+        enabled: true
+        ignore: [
+          "D100"
+          "D202"
+          "D203"
+          "D212"
+          "D407"
+          "D413"
+        ]
+      rope_completion:
+        enabled: true
+      yapf:
+        enabled: true
+  "linter-ui-default":
+    showPanel: true
+  minimap:
+    plugins:
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      "lens-mode": true
+      "lens-modeDecorationsZIndex": 0
+      selection: true
+      selectionDecorationsZIndex: 0
+  "mojave-dark-mode":
+    darkProfile: "one-dark-ui nucleon-dark-syntax"
+    lightProfile: "one-light-ui nucleon-light-syntax"
+  organized: {}
+  "remote-ftp":
+    connector:
+      autoUploadOnSave: "only when connected"
+      sshConfigPath: "/private/etc/ssh/ssh_config"
+    notifications:
+      enableTransfer: true
+      enableWatchFileChange: true
+    statusbar:
+      enable: true
+  script:
+    stopOnRerun: true
+  "spell-check":
+    locales: [
+      "en-US"
+    ]
+  "split-diff":
+    ignoreWhitespace: true
+  "sync-settings":
+    autoCheckForUpdatedBackup: "no"
+    gistId: "SYNC_SETTINGS__GIST_ID"
+    hiddenSettings:
+      _lastBackupTime: "2021-08-18T07:36:10Z"
+    installLatestVersion: true
+    personalAccessToken: "SYNC_SETTINGS__ACCESS_TOKEN"
+    quietUpdateCheck: true
+    syncKeymap: false
+    syncSnippets: false
+  "terminal-tab":
+    defaultLocation: "right"
+  "tool-bar":
+    position: "Right"
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
+".basic.html.text":
+  whitespace:
+    ensureSingleTrailingNewline: false
+".coffee.source":
+  editor:
+    tabLength: 2
+".cpp.source":
+  editor:
+    tabLength: 8
+".fish.source":
+  whitespace:
+    ensureSingleTrailingNewline: false
+".html.js.text":
+  editor:
+    tabLength: 2
+  whitespace:
+    ensureSingleTrailingNewline: false
+".jinja.source.yaml":
+  editor:
+    tabLength: 2
+".js.source":
+  editor:
+    tabLength: 2
+  whitespace:
+    ensureSingleTrailingNewline: false
+".json.source":
+  editor:
+    tabLength: 2
+  whitespace:
+    ensureSingleTrailingNewline: false
+".source.swift":
+  editor:
+    preferredLineLength: 100
+".source.yaml":
+  editor:
+    tabLength: 2
