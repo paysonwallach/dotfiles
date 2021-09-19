@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=lightdm-lock-on-unblank
+Name[en_GB.UTF-8]=lightdm-lock-on-unblank
+Exec=lightdm-lock-on-unblank
+NoDisplay=true
+Icon=application-default-icon
+X-GNOME-Autostart-enabled=true
+Type=Application
