@@ -1,0 +1,18 @@
+show_notifications: false
+matches:
+  - trigger: ":name"
+    replace: "Payson Wallach"
+
+  - trigger: ":uname"
+    replace: "paysonwallach"
+
+  - trigger: ":email"
+    replace: "EMAIL"
+
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d.%m.%Y"
